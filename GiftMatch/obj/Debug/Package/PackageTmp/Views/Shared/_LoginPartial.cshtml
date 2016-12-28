@@ -1,0 +1,31 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <text>
+        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+        }
+    </text>
+}
+else
+{
+    <div id="loginPartial">
+        <div class="fieldRowItem">
+            <div class="fieldLabel">Email or Phone</div>
+            <div>@Html.TextBox("EmailOrPhone")</div>
+            <div>@Html.CheckBox("StayLoggedIn")&nbsp;&nbsp;&nbsp;@Html.Label("StayLoggedIn", "Keep me logged in", new { @class="inline"})</div>
+        </div>
+        <div class="fieldRowItem">
+            <div class="fieldLabel">Password</div>
+            <div>@Html.Password("Password")</div>
+            <div>@Html.ActionLink("Can't log in?", "Forgot", "Account")</div>
+        </div>
+        <div class="fieldRowItem">
+            <div class="fieldLabel"></div>
+            <div><input type="button" value="Log In" /></div>
+            <div></div>
+        </div>
+    </div>
+}

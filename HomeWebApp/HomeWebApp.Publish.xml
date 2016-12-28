@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://104.14.44.114/Eric/site" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="False" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FTP" replaceMatchingFiles="True" userName="Sana" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARIGSIafhuEiEqn1rpqqrFgAAAAACAAAAAAADZgAAwAAAABAAAAAuP0IgvHcghWafwlPCs0GbAAAAAASAAACgAAAAEAAAAKMWMdJvAHtSdAx+IR5RbUIgAAAA0DnKav+ftOWB3DRTwLUae+X3Nq827wFvS+DVULnM2b0UAAAA6HwddxTxonWVGF1GTuNg3KVt1AU=" SelectedForPublish="True">
+    <file relUrl="OLD/PlayVideo.aspx" publishTime="05/09/2012 13:32:00" />
+    <file relUrl="Email.aspx" publishTime="11/16/2012 07:35:03" />
+    <file relUrl="images/nflpickswborder.jpg" publishTime="12/03/2012 16:48:00" />
+    <file relUrl="Global.asax" publishTime="10/25/2012 16:35:59" />
+    <file relUrl="site.Master" publishTime="09/12/2014 09:57:05" />
+    <file relUrl="images/image2.png" publishTime="12/10/2012 11:02:59" />
+    <file relUrl="images/visitors.jpg" publishTime="10/23/2012 18:47:00" />
+    <file relUrl="Scripts/jquery-1.4.1.js" publishTime="04/16/2012 12:56:00" />
+    <file relUrl="images/home.jpg" publishTime="10/23/2012 18:47:00" />
+    <file relUrl="NFLPicks.aspx" publishTime="11/26/2014 13:16:11" />
+    <file relUrl="OLD/Batch.asmx" publishTime="04/28/2012 13:59:00" />
+    <file relUrl="images/resizeIt.jpg" publishTime="06/15/2012 02:10:00" />
+    <file relUrl="images/babyTable.png" publishTime="11/16/2012 08:55:00" />
+    <file relUrl="images/floatImages/birdwithbat.png" publishTime="07/29/2013 12:49:03" />
+    <file relUrl="Eric.aspx" publishTime="12/03/2014 14:35:30" />
+    <file relUrl="Error.aspx" publishTime="10/25/2012 16:39:26" />
+    <file relUrl="images/babyTable.jpg" publishTime="11/16/2012 08:39:11" />
+    <file relUrl="Styles/style.css" publishTime="11/20/2014 14:31:10" />
+    <file relUrl="NFLMakePicksMobile.aspx" publishTime="09/02/2014 16:27:31" />
+    <file relUrl="Apps.aspx" publishTime="06/01/2012 13:34:00" />
+    <file relUrl="UpdateFromLink.aspx" publishTime="08/21/2013 07:25:39" />
+    <file relUrl="Register.aspx" publishTime="11/20/2014 14:31:44" />
+    <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="04/16/2012 12:56:00" />
+    <file relUrl="images/HowCouldYouDoThatToMe.PNG" publishTime="08/21/2013 07:35:39" />
+    <file relUrl="bin/Styles/style.css" publishTime="11/20/2014 14:31:10" />
+    <file relUrl="images/teamlogos/jaguars.png" publishTime="07/15/2013 21:20:16" />
+    <file relUrl="images/teamlogos/49ers.png" publishTime="07/15/2013 21:20:15" />
+    <file relUrl="Default.aspx" publishTime="03/19/2013 12:12:21" />
+    <file relUrl="HomePhotos.aspx" publishTime="12/05/2012 17:06:01" />
+    <file relUrl="images/teamlogos/cowboys.png" publishTime="07/15/2013 20:37:16" />
+    <file relUrl="images/image1.png" publishTime="12/10/2012 11:02:39" />
+    <file relUrl="bin/HomeWebApp.pdb" publishTime="12/03/2014 14:35:31" />
+    <file relUrl="bin/HomeAppsLib.pdb" publishTime="11/26/2014 12:35:16" />
+    <file relUrl="LoadCache.aspx" publishTime="11/27/2014 12:22:53" />
+    <file relUrl="images/babysFirstPicture.jpg" publishTime="09/19/2012 16:02:00" />
+    <file relUrl="images/teamlogos/dolphins.png" publishTime="07/15/2013 20:37:16" />
+    <file relUrl="ForgotPassword.aspx" publishTime="07/12/2013 21:19:45" />
+    <file relUrl="bin/HomeAppsLib.dll" publishTime="11/26/2014 12:35:16" />
+    <file relUrl="Styles/mobilestyle.css" publishTime="07/26/2013 09:23:28" />
+    <file relUrl="OLD/About.aspx" publishTime="09/26/2012 09:22:00" />
+    <file relUrl="bin/HomeWebApp.dll" publishTime="12/03/2014 14:35:31" />
+    <file relUrl="OLD/test.aspx" publishTime="06/22/2012 11:41:00" />
+    <file relUrl="images/nflpicks.jpg" publishTime="12/03/2012 14:05:10" />
+    <file relUrl="images/houseChouse.jpg" publishTime="06/01/2012 14:46:00" />
+    <file relUrl="WinLossStats.aspx" publishTime="12/03/2014 13:39:00" />
+    <file relUrl="images/teamlogos/falcons.png" publishTime="07/15/2013 22:25:57" />
+    <file relUrl="Web.config" publishTime="11/24/2013 17:20:05" />
+    <file relUrl="queries/userRequests.sql" publishTime="10/23/2012 13:39:12" />
+    <file relUrl="images/image3.png" publishTime="12/10/2012 11:03:16" />
+    <file relUrl="AlbumsListing.aspx" publishTime="06/16/2012 21:49:00" />
+    <file relUrl="images/nfl.jpg" publishTime="10/18/2012 13:00:07" />
+    <file relUrl="Scripts/site.js" publishTime="09/12/2014 10:05:41" />
+    <file relUrl="images/teamlogos/cardinals.png" publishTime="07/15/2013 22:25:56" />
+    <file relUrl="Scripts/imageMove.js" publishTime="07/22/2013 13:16:15" />
+    <file relUrl="images/image4.png" publishTime="12/10/2012 11:03:33" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="04/16/2012 12:56:00" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,8 @@
+C:\Main\Programs\HomeApps\WebClient\obj\x86\Debug\ConsoleService.csprojResolveAssemblyReference.cache
+C:\Main\Programs\HomeApps\WebClient\bin\Debug\HomeAppsLib.dll
+C:\Main\Programs\HomeApps\WebClient\bin\Debug\HomeAppsLib.pdb
+C:\Main\Programs\HomeApps\WebClient\bin\Debug\ConsoleService.exe
+C:\Main\Programs\HomeApps\WebClient\bin\Debug\ConsoleService.pdb
+C:\Main\Programs\HomeApps\WebClient\obj\x86\Debug\ConsoleService.exe
+C:\Main\Programs\HomeApps\WebClient\obj\x86\Debug\ConsoleService.pdb
+C:\Main\Programs\HomeApps\WebClient\bin\Debug\ConsoleService.exe.config

@@ -1,0 +1,4 @@
+C:\Main\Programs\HomeApps\ResizeUtility\bin\Release\ResizeUtility.exe
+C:\Main\Programs\HomeApps\ResizeUtility\bin\Release\ResizeUtility.pdb
+C:\Main\Programs\HomeApps\ResizeUtility\obj\x86\Release\ResizeUtility.exe
+C:\Main\Programs\HomeApps\ResizeUtility\obj\x86\Release\ResizeUtility.pdb

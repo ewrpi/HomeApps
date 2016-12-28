@@ -1,0 +1,6 @@
+C:\Main\Programs\HomeApps\WebClient\bin\Debug\WebClient.exe
+C:\Main\Programs\HomeApps\WebClient\bin\Debug\WebClient.pdb
+C:\Main\Programs\HomeApps\WebClient\bin\Debug\HomeAppsLib.dll
+C:\Main\Programs\HomeApps\WebClient\bin\Debug\HomeAppsLib.pdb
+C:\Main\Programs\HomeApps\WebClient\obj\x86\Debug\WebClient.exe
+C:\Main\Programs\HomeApps\WebClient\obj\x86\Debug\WebClient.pdb

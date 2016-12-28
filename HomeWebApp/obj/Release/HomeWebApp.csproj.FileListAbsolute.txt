@@ -1,0 +1,5 @@
+C:\Main\Programs\HomeApps\HomeWebApp\bin\Styles\style.css
+C:\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.dll
+C:\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.pdb
+C:\Main\Programs\HomeApps\HomeWebApp\obj\Release\HomeWebApp.dll
+C:\Main\Programs\HomeApps\HomeWebApp\obj\Release\HomeWebApp.pdb

@@ -1,0 +1,8 @@
+C:\Main\Programs\HomeApps\BatchService\BatchService\obj\x86\Debug\BatchService.csprojResolveAssemblyReference.cache
+C:\Main\Programs\HomeApps\BatchService\BatchService\bin\Debug\BatchService.exe
+C:\Main\Programs\HomeApps\BatchService\BatchService\bin\Debug\BatchService.pdb
+C:\Main\Programs\HomeApps\BatchService\BatchService\bin\Debug\HomeAppsLib.dll
+C:\Main\Programs\HomeApps\BatchService\BatchService\bin\Debug\HomeAppsLib.pdb
+C:\Main\Programs\HomeApps\BatchService\BatchService\obj\x86\Debug\BatchService.exe
+C:\Main\Programs\HomeApps\BatchService\BatchService\obj\x86\Debug\BatchService.pdb
+C:\Main\Programs\HomeApps\BatchService\BatchService\bin\Debug\BatchService.exe.config

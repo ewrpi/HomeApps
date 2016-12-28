@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+    <metadata>
+        <id>AE.Net.Mail</id>
+        <version>1.1.4.0</version>
+        <owners>Andy Edinborough</owners>
+        <authors>Andy Edinborough, Mentalis.org, Cyrille Colin</authors>
+        <description>POP/IMap Client Library</description>
+        <language>en-US</language>
+        <licenseUrl>http://aenetmail.codeplex.com/license</licenseUrl>
+        <projectUrl>http://aenetmail.codeplex.com/</projectUrl>
+    </metadata>
+</package>

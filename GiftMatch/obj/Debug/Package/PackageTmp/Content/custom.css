@@ -1,0 +1,45 @@
+﻿.fieldRowItem
+{
+    display:inline-block;    
+    margin-right:15px;
+    vertical-align:top;
+}
+
+.fieldRow
+{
+    margin-bottom:8px;
+    vertical-align:top;
+}
+
+.fieldRowItem
+{   
+    display:inline-block;    
+    margin-right:15px;
+    vertical-align:top;
+}
+
+.fieldLabel
+{
+    font-weight:bold;
+    font-size:12px;
+    height:1.3em;
+    vertical-align:bottom;
+}
+
+.inline
+{
+    display:inline-block;
+}
+
+#loginPartial
+{
+    font-size:12px;
+}
+#loginPartial input[type='text']
+{
+    max-width:150px;
+}
+#loginPartial input[type='password']
+{
+    max-width:150px;
+}

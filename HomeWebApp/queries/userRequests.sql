@@ -1,0 +1,1 @@
+﻿select username, max(request_datetime) as date from visitorrequestlog group by username order by 2 desc

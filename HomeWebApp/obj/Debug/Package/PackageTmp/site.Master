@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="site.master.cs" Inherits="HomeWebApp.site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="/Scripts/site.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+     
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body bgcolor="#0066ff">
+<!--Used In site.js for globalWait and globalReady-->
+<div id="globalScreenOverlay" class="globalScreenOverlay"></div>
+
+<%--<img src="images/image2.png" style="position:absolute; vertical-align:middle; width:30%; display:none;" alt="" id="dynImgBig" />--%>
+
+<form id="form1" runat="server">    
+<table width="100%">
+    <tr>
+        <td align="right" width="20%" valign="top">
+        <%if (HomeWebApp.Common.UserHasNotSubmittedComment() && Request.RawUrl.ToLower().Contains("nflpicks.aspx"))
+              {%>
+                <img id="dynImg2" alt="" style="position:relative;"/>
+            <%} %>
+        </td>
+
+        <td align="center" valign="top" width="60%">
+            
+            <%if (!Request.RawUrl.ToLower().Contains("nflpicks.aspx"))
+              {%>
+            <img alt="" src="images/houseChouse.jpg" width="100%" />
+            <%} %>
+            <%else
+              { %>
+              <img width="100%" alt="" src="images/nflpickswborder.jpg" />
+              <%} %>
+
+            <div align="left">
+                <asp:Menu ID="mainMenu" runat="server" Font-Size="XX-Large" ForeColor="Yellow">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/NFLPicks.aspx" Text="NFL Picks" Value="NFL Picks">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/AlbumsListing.aspx" Text="Photo Album" 
+                            Value="Photo Album"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Apps.aspx" Enabled="False"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+            
+            <br /><br /><br />
+            
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+            
+        </td>
+
+        <td align="left" width="20%" valign="top">
+            <%if (HomeWebApp.Common.UserHasNotSubmittedComment() && Request.RawUrl.ToLower().Contains("nflpicks.aspx"))
+              {%>
+                <img id="dynImg" alt="" style="position:relative;" />
+            <%} %>
+        </td> 
+
+    </tr>
+</table>
+
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+    function changeImage() {
+
+        var topOfScreen = document.documentElement.scrollTop;
+        if (topOfScreen == 0) topOfScreen = document.body.scrollTop;        
+
+        var img = document.getElementById("dynImg");
+        img.src = images[x];
+        img.style.top = topOfScreen + 100 + (4 * y) + "px";
+
+        var img2 = document.getElementById("dynImg2");
+        img2.src = images[(x + 2) % 4];
+        img2.style.top = topOfScreen + 100 + (4 * y) + "px";
+
+        if (y == 0) x++;
+        y++;
+        
+
+        if (x >= images.length) {
+            x = 0;            
+        }
+
+        if (y >= 99) { y = 0; }
+
+        setTimeout("changeImage()", 15);
+    }
+
+    var images = [], x = 1, y = 0;
+
+    images[0] = "images/image1.png";
+    images[1] = "images/image2.png";
+    images[2] = "images/image3.png";
+    images[3] = "images/image4.png";
+
+    if (document.getElementsByName("picksMade").length > 0) {
+        changeImage();
+    }
+
+</script>
+

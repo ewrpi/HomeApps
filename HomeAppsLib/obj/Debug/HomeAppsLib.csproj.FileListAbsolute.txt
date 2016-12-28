@@ -1,0 +1,5 @@
+C:\Main\Programs\HomeApps\HomeAppsLib\bin\Debug\HomeAppsLib.dll
+C:\Main\Programs\HomeApps\HomeAppsLib\bin\Debug\HomeAppsLib.pdb
+C:\Main\Programs\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.dll
+C:\Main\Programs\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.pdb
+C:\Main\Programs\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.csprojResolveAssemblyReference.cache

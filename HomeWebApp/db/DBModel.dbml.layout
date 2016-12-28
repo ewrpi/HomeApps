@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.875, 12.625" name="DBModel">
+  <DataContextMoniker Name="/DBModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b92f9ca4-29e7-4335-956b-bbbb1aee1f0d" absoluteBounds="1.125, 2.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBModelDataContext/visitor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="884d28ef-fb09-47c9-a3a8-f2ec0ee3e173" absoluteBounds="1.1400000000000001, 2.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2806fe8a-3c2f-4e8c-a88d-97259d4fea33" absoluteBounds="4, 4.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBModelDataContext/visitorCustomMessageHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d2449b9-4a08-4eed-84b6-8c6177600edd" absoluteBounds="4.015, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 4.78770182291667); (4 : 4.78770182291667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBModelDataContext/visitor/visitor_visitorCustomMessageHistory" />
+      <nodes>
+        <classShapeMoniker Id="b92f9ca4-29e7-4335-956b-bbbb1aee1f0d" />
+        <classShapeMoniker Id="2806fe8a-3c2f-4e8c-a88d-97259d4fea33" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="24fa804d-e494-4dfa-bdf9-7c3c8230171c" absoluteBounds="6.25, 3, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBModelDataContext/usersToVisitor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6237267-c1c8-4d38-9158-f2a268f6c49f" absoluteBounds="6.265, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6389c65d-3e63-46d9-9ead-a1654a90a48a" absoluteBounds="5.125, 6, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DBModelDataContext/NFL_userPick" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1f21182-c76c-43e1-8a15-86e120a3c16b" absoluteBounds="5.1400000000000006, 6.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f07ebdcf-8c75-46f3-9f6a-10f3ef79c5a8" absoluteBounds="3.25, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DBModelDataContext/NFL_division" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c11c7c6d-106f-4498-9140-f54a1aade660" absoluteBounds="3.265, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="026a8ce2-6c16-4cfa-a3fb-69cb41f90e03" absoluteBounds="3.375, 2.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBModelDataContext/visitorRequestLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="592b35e6-8216-458c-9bab-35788095b9fd" absoluteBounds="3.39, 2.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 3.39024983723958); (3.375 : 3.39024983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBModelDataContext/visitor/visitor_visitorRequestLog" />
+      <nodes>
+        <classShapeMoniker Id="b92f9ca4-29e7-4335-956b-bbbb1aee1f0d" />
+        <classShapeMoniker Id="026a8ce2-6c16-4cfa-a3fb-69cb41f90e03" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="48b62ddd-1467-48f9-b41c-db7c1da5a99a" absoluteBounds="9.625, 5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBModelDataContext/userSetting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b970ab4-b87b-4af7-8b95-f6e6dc83d06d" absoluteBounds="9.64, 5.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f40ea10b-43ff-407c-8779-cd34f010c18e" absoluteBounds="4.875, 8.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DBModelDataContext/NFL_WeekType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51b3a0e0-8c86-46bf-8f53-957fc04fc91f" absoluteBounds="4.8900000000000006, 8.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="380bd23b-6c65-41dd-9ce6-3efb40f959fa" absoluteBounds="3.125, 6.25, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DBModelDataContext/NFL_Matchup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9b83b5f-2fa2-410f-aeb1-d0de0f5bad6b" absoluteBounds="3.14, 6.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aab7ea32-1f28-4334-8630-9184e6771d5e" absoluteBounds="0.75, 5.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBModelDataContext/NFL_week" />
+      <nestedChildShapes>
+        <elementListCompartment Id="130358f3-03a9-408f-9f68-8a4f6b5e1319" absoluteBounds="0.76500000000000012, 6.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 6.09375); (5.125 : 6.09375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBModelDataContext/NFL_week/NFL_week_NFL_userPick" />
+      <nodes>
+        <classShapeMoniker Id="aab7ea32-1f28-4334-8630-9184e6771d5e" />
+        <classShapeMoniker Id="6389c65d-3e63-46d9-9ead-a1654a90a48a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.34375); (3.125 : 7.34375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DBModelDataContext/NFL_week/NFL_week_NFL_Matchup" />
+      <nodes>
+        <classShapeMoniker Id="aab7ea32-1f28-4334-8630-9184e6771d5e" />
+        <classShapeMoniker Id="380bd23b-6c65-41dd-9ce6-3efb40f959fa" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="30632c01-8275-4270-80e9-b9982ea7cbca" absoluteBounds="5.75, 1.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DBModelDataContext/emailSubscriptionType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6236f1dd-3ffa-4c80-81cc-419d07f81ed1" absoluteBounds="5.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a7b92370-f8f0-4147-8094-c76c543ccae0" absoluteBounds="0.5, 4.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DBModelDataContext/NFL_sport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b103497-0048-44da-8de3-81b518643fe5" absoluteBounds="0.51499999999999968, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0cb874e2-cc02-48e0-9781-594165e8a32a" absoluteBounds="6, 0.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DBModelDataContext/NFL_team" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c1ed62a-bcf2-447c-a14d-fe5e965c826e" absoluteBounds="6.015, 1.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e81c80e-081b-42d5-9078-8d2566e37194" absoluteBounds="0.625, 0.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DBModelDataContext/user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce040a07-bb1e-4a91-b6fe-8e5abe09a38a" absoluteBounds="0.64000000000000012, 1.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8e2b92ad-1422-4a03-a5c2-0dcb0bbcd5d9" absoluteBounds="3.5, 10.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DBModelDataContext/NFL_year" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8d94012-2f6b-4491-9c30-970d8e50992c" absoluteBounds="3.515, 10.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,8 @@
+C:\Main\Programs\HomeApps\DailyEngine\bin\Debug\DailyEngine.exe.config
+C:\Main\Programs\HomeApps\DailyEngine\bin\Debug\DailyEngine.exe
+C:\Main\Programs\HomeApps\DailyEngine\bin\Debug\DailyEngine.pdb
+C:\Main\Programs\HomeApps\DailyEngine\bin\Debug\HomeAppsLib.dll
+C:\Main\Programs\HomeApps\DailyEngine\bin\Debug\HomeAppsLib.pdb
+C:\Main\Programs\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csprojResolveAssemblyReference.cache
+C:\Main\Programs\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.exe
+C:\Main\Programs\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.pdb

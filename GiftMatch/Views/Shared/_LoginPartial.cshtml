@@ -1,0 +1,38 @@
+﻿@model GiftMatch.Models.LoginModel
+
+@if (Request.IsAuthenticated)
+{
+    <text>
+        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+        }
+    </text>
+}
+else
+{
+    using (Html.BeginForm("Login", "Account"))
+    {
+        @Html.AntiForgeryToken()
+        
+        <div id="loginPartial">
+            <div class="fieldRowItem">
+                <div class="fieldLabel">Username or Email</div>
+                <div>@Html.TextBoxFor(m => m.UserName)</div>
+                <div>@Html.CheckBoxFor(m => m.StayLoggedIn)&nbsp;&nbsp;&nbsp;@Html.Label("StayLoggedIn", "Keep me logged in", new { @class = "inline" })</div>
+            </div>
+            <div class="fieldRowItem">
+                <div class="fieldLabel">Password</div>
+                <div>@Html.PasswordFor(m => m.Password)</div>
+                <div>@Html.ActionLink("Can't log in?", "Forgot", "Account")</div>
+            </div>
+            <div class="fieldRowItem">
+                <div class="fieldLabel"></div>
+                <div><input type="submit" value="Log In" /></div>
+                <div></div>
+            </div>
+        </div>
+    }
+}

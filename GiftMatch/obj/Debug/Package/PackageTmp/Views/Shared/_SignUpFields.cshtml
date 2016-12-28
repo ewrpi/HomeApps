@@ -1,0 +1,52 @@
+﻿@using GiftMatch.Helpers;
+
+<div id="signUpFields">
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>@Html.TextBox("Username")</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>@Html.Password("Password")</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><select><option>Male</option><option>Female</option></select></td>
+        </tr>
+        <tr>
+            <td>Birthdate:</td>
+            <td>@Html.DropDownListForMonths("Months") @Html.DropDownListForDays("Days") @Html.DropDownListForYears("Years")</td>
+        </tr>
+        <tr>
+            <td>Country:</td>
+            <td>@Html.DropDownListForCountries("Countries")</td>
+        </tr>
+        <tr>
+            <td>Ethnicity:</td>
+            <td>@Html.DropDownListForEthnicities("Ethnicity")</td>
+        </tr>
+        <tr>
+            <td>Enter letters:</td>
+            <td>@Html.TextBox("SecurityLetters")</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>@Html.TextBox("Email")</td>
+        </tr>
+        <tr>
+            <td>Confirm Email:</td>
+            <td>@Html.TextBox("ConfirmEmail")</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                @Html.Label("AgreeToTerms", "I agree to the terms of service:") @Html.CheckBox("AgreeToTerms")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="Continue!" />
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,20 @@
+﻿@model GiftMatch.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Create a new account.</h2>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    @Html.Partial("_SignUpFields")
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

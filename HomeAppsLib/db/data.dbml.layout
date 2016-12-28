@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="data">
+  <DataContextMoniker Name="/dataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="41a1329d-4606-4152-8563-49949edeac22" absoluteBounds="3.875, 1.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dataDataContext/userSetting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2233629d-0d32-4bcc-922b-94e9218bf08d" absoluteBounds="3.89, 1.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f290d641-bf5c-41e3-a70e-910cad2d8eba" absoluteBounds="1, 4.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dataDataContext/NFL_week" />
+      <nestedChildShapes>
+        <elementListCompartment Id="186a05dd-64c3-48e6-ab7d-0747486a4614" absoluteBounds="1.0150000000000001, 4.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10b9846b-0c4e-4a2d-ab80-0b8c067ac9fb" absoluteBounds="3.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/dataDataContext/NFL_userPick" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d5bd8994-9ef5-4faa-93f7-b7c68e48dfa2" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8dff27e-3566-49d6-801e-13cccb823034" absoluteBounds="2.625, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dataDataContext/log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd883c33-38dd-4290-9075-ff01896d0409" absoluteBounds="2.64, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39ed5bb4-e915-438e-9099-dd0653b932dd" absoluteBounds="6.25, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/dataDataContext/EmailLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0949b69b-eb2b-440f-bc17-ac8e0cbd9f6b" absoluteBounds="6.265, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90022e38-bd7d-4935-93e5-13bca203c295" absoluteBounds="6.125, 3.375, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/dataDataContext/NFL_forum" />
+      <nestedChildShapes>
+        <elementListCompartment Id="791aac3f-c8ca-49e6-9169-07ae6500630b" absoluteBounds="6.1400000000000006, 3.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a74b283-4373-402f-ab3c-2cde02abeeaf" absoluteBounds="5, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dataDataContext/emailSubscriptionType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="767333f6-59e9-485d-a279-102bbbfcd0fa" absoluteBounds="5.015, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 5.74924967447917); (6.125 : 5.74924967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dataDataContext/NFL_week/NFL_week_NFL_forum" />
+      <nodes>
+        <classShapeMoniker Id="f290d641-bf5c-41e3-a70e-910cad2d8eba" />
+        <classShapeMoniker Id="90022e38-bd7d-4935-93e5-13bca203c295" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b28754cb-eddf-41f1-9b59-1d137fdd130d" absoluteBounds="2.75, 1.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dataDataContext/user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22d63f30-9546-4e6a-b825-11bc93a9eceb" absoluteBounds="2.765, 1.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09011164-cfa3-4737-b290-74bbec7feb3c" isExpanded="false" absoluteBounds="1.125, 3.375, 2, 0.45">
+      <DataClassMoniker Name="/dataDataContext/NFL_year" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13a8e3ed-f38c-465f-8373-d047fd968cef" absoluteBounds="1.1400000000000006, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="573a9bdf-607a-4c9e-a816-25768a6a49ca" absoluteBounds="1.125, 2, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/dataDataContext/NFL_sport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c9b7c22-af4f-4d6f-a8db-45dfeda5368d" absoluteBounds="1.1400000000000001, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.0625 : 3.825); (2.0625 : 4.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dataDataContext/NFL_year/NFL_year_NFL_week" />
+      <nodes>
+        <classShapeMoniker Id="09011164-cfa3-4737-b290-74bbec7feb3c" />
+        <classShapeMoniker Id="f290d641-bf5c-41e3-a70e-910cad2d8eba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.90625 : 3.19399251302083); (1.90625 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dataDataContext/NFL_sport/NFL_sport_NFL_year" />
+      <nodes>
+        <classShapeMoniker Id="573a9bdf-607a-4c9e-a816-25768a6a49ca" />
+        <classShapeMoniker Id="09011164-cfa3-4737-b290-74bbec7feb3c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="59f6d2e4-0611-4284-baef-6eabac1db1d1" absoluteBounds="6.125, 3.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/dataDataContext/NFL_Matchup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66e8d341-1829-4b3e-9cf5-d39e9efd334b" absoluteBounds="6.14, 3.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3 : 5.9619775390625); (6.125 : 5.9619775390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dataDataContext/NFL_week/NFL_week_NFL_Matchup" />
+      <nodes>
+        <classShapeMoniker Id="f290d641-bf5c-41e3-a70e-910cad2d8eba" />
+        <classShapeMoniker Id="59f6d2e4-0611-4284-baef-6eabac1db1d1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

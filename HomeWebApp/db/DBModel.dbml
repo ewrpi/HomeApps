@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HomeWebAppDB" Class="DBModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local)\eric;Initial Catalog=HomeWebAppDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HomeWebAppDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.visitors" Member="visitors">
+    <Type Name="visitor">
+      <Column Name="ip_address" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="city" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="region" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="zip" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="coordinates" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ISP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="details_html" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="first_request_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="visitor_visitorCustomMessageHistory" Member="visitorCustomMessageHistories" ThisKey="ip_address" OtherKey="ip_address" Type="visitorCustomMessageHistory" />
+      <Association Name="visitor_visitorRequestLog" Member="visitorRequestLogs" ThisKey="ip_address" OtherKey="ip_address" Type="visitorRequestLog" />
+    </Type>
+  </Table>
+  <Table Name="dbo.visitorCustomMessageHistory" Member="visitorCustomMessageHistories">
+    <Type Name="visitorCustomMessageHistory">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ip_address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="update_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="visitor_visitorCustomMessageHistory" Member="visitor" ThisKey="ip_address" OtherKey="ip_address" Type="visitor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usersToVisitors" Member="usersToVisitors">
+    <Type Name="usersToVisitor">
+      <Column Name="username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ip_address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="insert_dt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NFL_userPicks" Member="NFL_userPicks">
+    <Type Name="NFL_userPick">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="week" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="picks" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="pick_dt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="NFL_week_NFL_userPick" Member="NFL_week" ThisKey="week" OtherKey="week" Type="NFL_week" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NFL_divisions" Member="NFL_divisions">
+    <Type Name="NFL_division">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.visitorRequestLog" Member="visitorRequestLogs">
+    <Type Name="visitorRequestLog">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ip_address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="request_page" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="request_url" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="request_datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="control_desc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="visitor_visitorRequestLog" Member="visitor" ThisKey="ip_address" OtherKey="ip_address" Type="visitor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.userSettings" Member="userSettings">
+    <Type Name="userSetting">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="settingKey" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="settingValue" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="insert_dt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="update_dt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="active_flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NFL_WeekTypes" Member="NFL_WeekTypes">
+    <Type Name="NFL_WeekType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NFL_Matchups" Member="NFL_Matchups">
+    <Type Name="NFL_Matchup">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="week" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="away" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="home" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="winner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="home_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="away_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="scheduled" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="eid" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="year_week" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NFL_week_NFL_Matchup" Member="NFL_week" ThisKey="week" OtherKey="week" Type="NFL_week" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NFL_weeks" Member="NFL_weeks">
+    <Type Name="NFL_week">
+      <Column Name="week" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="exp_dt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="games" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="text" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="year_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="year_week" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sort_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="weekTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="display_flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="picksClosed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="NFL_week_NFL_userPick" Member="NFL_userPicks" ThisKey="week" OtherKey="week" Type="NFL_userPick" />
+      <Association Name="NFL_week_NFL_Matchup" Member="NFL_Matchups" ThisKey="week" OtherKey="week" Type="NFL_Matchup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.emailSubscriptionTypes" Member="emailSubscriptionTypes">
+    <Type Name="emailSubscriptionType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NFL_sports" Member="NFL_sports">
+    <Type Name="NFL_sport">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NFL_teams" Member="NFL_teams">
+    <Type Name="NFL_team">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="division" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sport_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="display_flag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users" Member="users">
+    <Type Name="user">
+      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="encPW" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ip_address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="registration_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="stay_logged_on_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NFL_years" Member="NFL_years">
+    <Type Name="NFL_year">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="text" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sport_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="betAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="betUsers" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
