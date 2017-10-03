@@ -1,14 +1,18 @@
-﻿@using GiftMatch.Helpers;
+﻿@model GiftMatch.Models.RegisterModel
+@using GiftMatch.Helpers;
 
+@using (Html.BeginForm("Register", "Account"))
+{
+    @Html.AntiForgeryToken()
 <div id="signUpFields">
     <table>
         <tr>
             <td>Username:</td>
-            <td>@Html.TextBox("Username")</td>
+            <td>@Html.TextBoxFor(m => m.UserName)</td>
         </tr>
         <tr>
             <td>Password:</td>
-            <td>@Html.Password("Password")</td>
+            <td>@Html.PasswordFor(m => m.Password)</td>
         </tr>
         <tr>
             <td>Gender</td>
@@ -45,8 +49,9 @@
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <input type="button" value="Continue!" />
+                <input type="submit" value="Continue!" />
             </td>
         </tr>
     </table>
 </div>
+}

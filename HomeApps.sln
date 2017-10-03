@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWebApp", "HomeWebApp\HomeWebApp.csproj", "{84BFD4B7-AF78-456F-9703-43FA615A10F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResizeUtility", "ResizeUtility\ResizeUtility.csproj", "{F45829EF-B5D3-4DE5-AD54-90E770C47829}"
@@ -89,5 +91,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {740CD870-96B4-4E05-8895-6E6E97FF59D6}
 	EndGlobalSection
 EndGlobal

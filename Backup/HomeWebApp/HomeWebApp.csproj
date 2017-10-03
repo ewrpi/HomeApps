@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84BFD4B7-AF78-456F-9703-43FA615A10F9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HomeWebApp</RootNamespace>
+    <AssemblyName>HomeWebApp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\HowCouldYouDoThatToMe.PNG" />
+    <Content Include="images\the-wright-picks-banner.png" />
+    <Content Include="LoadCache.aspx" />
+    <Content Include="OLD\About.aspx" />
+    <Content Include="AlbumsListing.aspx" />
+    <Content Include="Apps.aspx" />
+    <Content Include="OLD\Batch.asmx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Email.aspx" />
+    <Content Include="Eric.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="HomePhotos.aspx" />
+    <Content Include="images\babysFirstPicture.jpg" />
+    <Content Include="images\babyTable.jpg" />
+    <Content Include="images\babyTable.png" />
+    <Content Include="images\floatImages\birdwithbat.png" />
+    <Content Include="images\home.jpg" />
+    <Content Include="images\houseChouse.jpg" />
+    <Content Include="images\image1.png" />
+    <Content Include="images\image2.png" />
+    <Content Include="images\image3.png" />
+    <Content Include="images\image4.png" />
+    <Content Include="images\nfl.jpg" />
+    <Content Include="images\nflpicks.jpg" />
+    <Content Include="images\nflpickswborder.jpg" />
+    <Content Include="images\resizeIt.jpg" />
+    <Content Include="images\teamlogos\49ers.png" />
+    <Content Include="images\teamlogos\cardinals.png" />
+    <Content Include="images\teamlogos\cowboys.png" />
+    <Content Include="images\teamlogos\dolphins.png" />
+    <Content Include="images\teamlogos\falcons.png" />
+    <Content Include="images\teamlogos\jaguars.png" />
+    <Content Include="images\visitors.jpg" />
+    <Content Include="NFLMakePicksMobile.aspx" />
+    <Content Include="NFLPicks.aspx" />
+    <Content Include="OLD\PlayVideo.aspx" />
+    <Content Include="queries\userRequests.sql" />
+    <Content Include="Register.aspx" />
+    <Content Include="Scripts\imageMove.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="WinLossStats.aspx" />
+    <None Include="Styles\Site.css.deleted" />
+    <Content Include="Styles\mobilestyle.css" />
+    <Content Include="Styles\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OLD\test.aspx" />
+    <Content Include="UpdateFromLink.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoadCache.aspx.cs">
+      <DependentUpon>LoadCache.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoadCache.aspx.designer.cs">
+      <DependentUpon>LoadCache.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logic\Cache.cs" />
+    <Compile Include="logic\Meta.cs" />
+    <Compile Include="OLD\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlbumsListing.aspx.cs">
+      <DependentUpon>AlbumsListing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlbumsListing.aspx.designer.cs">
+      <DependentUpon>AlbumsListing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps.aspx.cs">
+      <DependentUpon>Apps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps.aspx.designer.cs">
+      <DependentUpon>Apps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OLD\Batch.asmx.cs">
+      <DependentUpon>Batch.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Email.aspx.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Email.aspx.designer.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="logic\Common.cs" />
+    <Compile Include="db\DBModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logic\Encryption.cs" />
+    <Compile Include="Eric.aspx.cs">
+      <DependentUpon>Eric.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eric.aspx.designer.cs">
+      <DependentUpon>Eric.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePhotos.aspx.cs">
+      <DependentUpon>HomePhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePhotos.aspx.designer.cs">
+      <DependentUpon>HomePhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logic\Helpers.cs" />
+    <Compile Include="logic\Authentication.cs" />
+    <Compile Include="NFLMakePicksMobile.aspx.cs">
+      <DependentUpon>NFLMakePicksMobile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NFLMakePicksMobile.aspx.designer.cs">
+      <DependentUpon>NFLMakePicksMobile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NFLPicks.aspx.cs">
+      <DependentUpon>NFLPicks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NFLPicks.aspx.designer.cs">
+      <DependentUpon>NFLPicks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OLD\PlayVideo.aspx.cs">
+      <DependentUpon>PlayVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\PlayVideo.aspx.designer.cs">
+      <DependentUpon>PlayVideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="site.Master.cs">
+      <DependentUpon>site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="site.Master.designer.cs">
+      <DependentUpon>site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OLD\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateFromLink.aspx.cs">
+      <DependentUpon>UpdateFromLink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateFromLink.aspx.designer.cs">
+      <DependentUpon>UpdateFromLink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WinLossStats.aspx.cs">
+      <DependentUpon>WinLossStats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinLossStats.aspx.designer.cs">
+      <DependentUpon>WinLossStats.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="db\DBModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DBModel.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="db\DBModel.dbml.layout">
+      <DependentUpon>DBModel.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomeAppsLib\HomeAppsLib.csproj">
+      <Project>{C390A8FE-9F0E-4692-8345-C216F14CDBE2}</Project>
+      <Name>HomeAppsLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60002</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

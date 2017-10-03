@@ -22,3 +22,13 @@ C:\Main\Programs\HomeApps\HomeWebApp\bin\HomeAppsLib.pdb
 C:\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csprojResolveAssemblyReference.cache
 C:\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.dll
 C:\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\Styles\style.css
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.dll.config
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeAppsLib.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeAppsLib.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csprojResolveAssemblyReference.cache
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csproj.CoreCompileInputs.cache
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.pdb
