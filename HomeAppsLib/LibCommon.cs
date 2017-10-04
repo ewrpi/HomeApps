@@ -83,7 +83,7 @@ namespace HomeAppsLib
                     data.EmailLogs.InsertOnSubmit(log);
                     data.SubmitChanges();
                 }
-                catch (Exception ex) { SendEmail("eric.wright@jvic.com", "ERROR LOGGING EMAIL", ex.ToString(), "Home Apps", false); }
+                catch (Exception ex) { SendEmail("eric@hackerdevs.com", "ERROR LOGGING EMAIL", ex.ToString(), "Home Apps", false); }
             }
 
             return message;
@@ -140,12 +140,12 @@ namespace HomeAppsLib
             else return null;
         }
 
-        public static string WebsiteUrlRoot()
+        public static string WebsiteUrlRoot(bool local = false)
         {
             if (LibCommon.IsDevelopmentEnvironment())
                 return "http://localhost:60002/";
 
-            return "http://www.thewrightpicks.com/";
+            return local ? "http://192.168.2.150/" : "http://www.thewrightpicks.com/";            
         }
 
         public static bool IsDevelopmentEnvironment()
@@ -277,7 +277,7 @@ namespace HomeAppsLib
                 try
                 {
                     if (IsAppInTestMode())
-                        LibCommon.SendEmail("eric.wright@jvic.com", "Exception in UpdateNFLMatchups()", ex.ToString(), "EricWrightSite"); 
+                        LibCommon.SendEmail("eric@hackerdevs.com", "Exception in UpdateNFLMatchups()", ex.ToString(), "EricWrightSite"); 
                 }
                 catch { }
             }

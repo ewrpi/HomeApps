@@ -47,7 +47,7 @@ namespace DailyEngine
             {
                 if (LibCommon.DBModel().NFL_userPicks.Count(x => x.week == weekAboutToExpire.week && x.username == user.name) == 0)
                 {
-                    string to = LibCommon.IsDevelopmentEnvironment() ? "eric.wright@jvic.com" : user.email;
+                    string to = LibCommon.IsDevelopmentEnvironment() ? "eric@hackerdevs.com" : user.email;
 
                     int daysLeft = (weekAboutToExpire.exp_dt.Date - DateTime.Now.Date).Days;
 

@@ -40,7 +40,7 @@ namespace HomeWebApp
 
             catch (Exception ex) 
             {
-                string emailStatus = Common.SendEmail("eric.wright@jvic.com", "exception thrown in site.Master form load", ex.ToString(), "HomeWebAppException");
+                string emailStatus = Common.SendEmail("eric@hackerdevs.com", "exception thrown in site.Master form load", ex.ToString(), "HomeWebAppException");
 
                 //if (emailStatus != "Success")
                     //Meta.LogError("Error sending email {" + emailStatus + "}. \n\n\nThe email was reporting exception in site.Master form load {" + ex.ToString() + "}.");

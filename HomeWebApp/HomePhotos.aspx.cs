@@ -65,7 +65,7 @@ namespace HomeWebApp
             string html = GetPictureGridHtml(CurrentAlbum(), 8);
 
             HttpContext.Current.Session["all"] = html;
-            // Common.SendEmail("eric.wright@jvic.com", "eric.wright@jvic.com", System.Web.HttpUtility.HtmlEncode(html), "Test");
+            // Common.SendEmail("eric@hackerdevs.com", "eric@hackerdevs.com", System.Web.HttpUtility.HtmlEncode(html), "Test");
         }
 
         protected void btn_undoAll_Click(object sender, EventArgs e)

@@ -16,8 +16,8 @@ namespace HomeWebApp
         private Meta(string ipAddress)
         {
             _ipAddress = ipAddress;
-            _emailTo = "eric.wright@jvic.com;";
-            //_emailTo = "eric.wright@jvic.com";
+            _emailTo = "eric@hackerdevs.com;";
+            //_emailTo = "eric@hackerdevs.com";
             _sendAddlInfo = false;
         }
 

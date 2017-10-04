@@ -35,7 +35,7 @@ namespace HomeWebApp
             //try
             //{
             //    Exception ex = Server.GetLastError();
-            //    Common.SendEmail("eric.wright@jvic.com", "Unhandled exception in HomeWebApp", "Sent from global.asax => " + ex.ToString(), "EricWrightSite");
+            //    Common.SendEmail("eric@hackerdevs.com", "Unhandled exception in HomeWebApp", "Sent from global.asax => " + ex.ToString(), "EricWrightSite");
             //    throw ex;
             //}
             //catch { }

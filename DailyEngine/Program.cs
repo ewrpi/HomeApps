@@ -31,11 +31,11 @@ namespace DailyEngine
 
                 LogRun(type, desc);
                 if (DateTime.Now  < Convert.ToDateTime("2/8/14"))
-                    LibCommon.SendEmail("eric.wright@jvic.com", type, "Should be last email for a while!<hr>" + desc, "Daily Engine");
+                    LibCommon.SendEmail("eric@hackerdevs.com", type, "Should be last email for a while!<hr>" + desc, "Daily Engine");
             }
             catch (Exception ex)
             {
-                LibCommon.SendEmail("eric.wright@jvic.com", "ERROR in Daily Engine", ex.ToString(), "Daily Engine");
+                LibCommon.SendEmail("eric@hackerdevs.com", "ERROR in Daily Engine", ex.ToString(), "Daily Engine");
             }
         }
         private static string GetVersion()

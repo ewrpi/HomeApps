@@ -25,15 +25,15 @@ namespace BatchService
 
         protected override void OnStart(string[] args)
         {
-            //LibCommon.SendEmail("eric.wright@jvic.com", "Batch Service Started", "Before DoWork", "Console Service");
+            //LibCommon.SendEmail("eric@hackerdevs.com", "Batch Service Started", "Before DoWork", "Console Service");
             bgw.RunWorkerAsync();
-            //LibCommon.SendEmail("eric.wright@jvic.com", "Batch Service Started", "After DoWork", "Console Service");
+            //LibCommon.SendEmail("eric@hackerdevs.com", "Batch Service Started", "After DoWork", "Console Service");
         }
 
         protected override void OnStop()
         {
             bgw.CancelAsync();
-            LibCommon.SendEmail("eric.wright@jvic.com", "Batch Service Stopped", "Batch Service Stopped", "Console Service");
+            LibCommon.SendEmail("eric@hackerdevs.com", "Batch Service Stopped", "Batch Service Stopped", "Console Service");
         }
 
         private void bgw_DoWork(object sender, DoWorkEventArgs e)
@@ -59,7 +59,7 @@ namespace BatchService
                     {
                         try
                         {
-                            string url = LibCommon.WebsiteUrlRoot() + "LoadCache.aspx?key=true";
+                            string url = LibCommon.WebsiteUrlRoot(local: true) + "LoadCache.aspx?key=true";
                             client.DownloadString(url);
                         }
                         catch { }
@@ -67,7 +67,7 @@ namespace BatchService
 
                     // 3. report
                     if (LibCommon.IsAppInTestMode())
-                        LibCommon.SendEmail("eric.wright@jvic.com", "Console Service Successful", "At " + DateTime.Now, "Console Service");
+                        LibCommon.SendEmail("eric@hackerdevs.com", "Console Service Successful", "At " + DateTime.Now, "Console Service");
 
                     // 4. wait
                     System.Threading.Thread.Sleep(1000 * 60 * RUN_INVERVAL_MINUTES);
@@ -82,7 +82,7 @@ namespace BatchService
                         if (_exceptionCount == EXCEPTION_THRESHOLD)
                             body = "PROGRAM TERMINATED AFTER " + EXCEPTION_THRESHOLD + " ATTEMPTS<br /><br />" + body;
 
-                        LibCommon.SendEmail("eric.wright@jvic.com", "Console Service Exception", body, "Console Service");
+                        LibCommon.SendEmail("eric@hackerdevs.com", "Console Service Exception", body, "Console Service");
 
                         if (_exceptionCount == EXCEPTION_THRESHOLD)
                             return;

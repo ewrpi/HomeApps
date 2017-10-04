@@ -23,7 +23,7 @@ namespace HomeWebApp
         protected void btnSendEmail_Click(object sender, EventArgs e)
         {
             string user = Authentication.GetAuthenticatedUserName() ?? "AnonymousUser";
-            string result = Common.SendEmail("eric.wright@jvic.com", lblMessageFromQueryString.Text, txtEmailBody.Text, user);
+            string result = Common.SendEmail("eric@hackerdevs.com", lblMessageFromQueryString.Text, txtEmailBody.Text, user);
 
             if (result.ToLower() != "success")
             {

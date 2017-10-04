@@ -115,7 +115,7 @@ namespace HomeWebApp
 
         protected void btnSendIPNotificationEmail_Click(object sender, EventArgs e)
         {
-            Meta.ExecuteEmailSendAsync(txtIPAddress.Text, "eric.wright@jvic.com", cb_sendAddlInfo.Checked);
+            Meta.ExecuteEmailSendAsync(txtIPAddress.Text, "eric@hackerdevs.com", cb_sendAddlInfo.Checked);
             txtIPAddress.Text = string.Empty;
             cb_sendAddlInfo.Checked = false;
         }
