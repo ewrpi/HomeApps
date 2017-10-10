@@ -143,13 +143,6 @@
         <td>
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></td>
     </tr>
-     <tr align="left">
-        <td class="fieldLabel">Stay Logged On: </td>
-        <td>
-            <asp:DropDownList ID="ddlStayLoggedOn" runat="server">
-            </asp:DropDownList>
-        </td>
-    </tr>  
     <tr align="left">
         <td></td>
         <td>

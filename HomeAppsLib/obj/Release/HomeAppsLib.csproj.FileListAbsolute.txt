@@ -1,0 +1,6 @@
+D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\bin\Release\HomeAppsLib.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\bin\Release\HomeAppsLib.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\obj\Release\HomeAppsLib.csprojResolveAssemblyReference.cache
+D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\obj\Release\HomeAppsLib.csproj.CoreCompileInputs.cache
+D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\obj\Release\HomeAppsLib.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\obj\Release\HomeAppsLib.pdb

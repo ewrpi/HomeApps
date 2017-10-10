@@ -448,14 +448,6 @@ namespace HomeWebApp
             ddlWeeksAdmin.DataBind();
             ddlWeeksAdmin.SelectedValue = ddlWeeks.SelectedValue;
 
-            if (pnlLogInOrRegister.Visible)
-            {
-                ddlStayLoggedOn.Items.Add(new ListItem("No", DateTime.Now.ToString()));
-                ddlStayLoggedOn.Items.Add(new ListItem("Yes - 1 day", DateTime.Now.AddDays(1).ToString()));
-                ddlStayLoggedOn.Items.Add(new ListItem("Yes - 1 week", DateTime.Now.AddDays(7).ToString()));
-                ddlStayLoggedOn.Items.Add(new ListItem("Yes - Forever", DateTime.Now.AddYears(100).ToString()));
-            }
-
             ddlCummStatGrouping.Items.Add("25");
             ddlCummStatGrouping.Items.Add("50");
             ddlCummStatGrouping.Items.Add("75");
@@ -760,7 +752,7 @@ namespace HomeWebApp
             {
                 if (Request.Cookies[Authentication.AUTHENTICATED_USER_STRING] == null || Request.Cookies[Authentication.AUTHENTICATED_USER_ENC_PASSWORD_STRING] == null)
                 {
-                    DateTime stayLoggedOn = Convert.ToDateTime(ddlStayLoggedOn.SelectedValue);
+                    DateTime stayLoggedOn = Convert.ToDateTime(DateTime.Now.AddYears(100));
 
                     HttpCookie userCookie = new HttpCookie(Authentication.AUTHENTICATED_USER_STRING);
                     userCookie.Value = Authentication.GetAuthenticatedUserName();

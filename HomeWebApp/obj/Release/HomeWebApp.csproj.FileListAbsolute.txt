@@ -3,3 +3,13 @@ C:\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.dll
 C:\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.pdb
 C:\Main\Programs\HomeApps\HomeWebApp\obj\Release\HomeWebApp.dll
 C:\Main\Programs\HomeApps\HomeWebApp\obj\Release\HomeWebApp.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\Styles\style.css
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.dll.config
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeAppsLib.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeAppsLib.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Release\HomeWebApp.csprojResolveAssemblyReference.cache
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Release\HomeWebApp.csproj.CoreCompileInputs.cache
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Release\HomeWebApp.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Release\HomeWebApp.pdb
