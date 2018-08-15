@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAppsLib", "HomeAppsLib\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyEngine", "DailyEngine\DailyEngine.csproj", "{5C9EAB19-B2D4-4BA5-AAC7-4EB7BA5154A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftMatch", "GiftMatch\GiftMatch.csproj", "{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchService", "BatchService\BatchService\BatchService.csproj", "{96533966-B016-4D86-B9CF-7DD65EF9D423}"
 EndProject
 Global
@@ -67,16 +65,6 @@ Global
 		{5C9EAB19-B2D4-4BA5-AAC7-4EB7BA5154A0}.Release|Mixed Platforms.Build.0 = Release|x86
 		{5C9EAB19-B2D4-4BA5-AAC7-4EB7BA5154A0}.Release|x86.ActiveCfg = Release|x86
 		{5C9EAB19-B2D4-4BA5-AAC7-4EB7BA5154A0}.Release|x86.Build.0 = Release|x86
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{F6FE1D3F-87DB-4A2C-B259-A707CA0A9167}.Release|x86.ActiveCfg = Release|Any CPU
 		{96533966-B016-4D86-B9CF-7DD65EF9D423}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{96533966-B016-4D86-B9CF-7DD65EF9D423}.Debug|Any CPU.Build.0 = Debug|x86
 		{96533966-B016-4D86-B9CF-7DD65EF9D423}.Debug|Mixed Platforms.ActiveCfg = Debug|x86

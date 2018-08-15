@@ -91,7 +91,7 @@ namespace HomeWebApp
         //class TimeLogItem { public DateTime Time { get; set; } public string Text { get; set; } }
         private void loadPage()
         {
-            populateNFLSiteData();
+            //populateNFLSiteData();            
 
             int week = Convert.ToInt32(ddlWeeks.SelectedValue);
             Session["autoweek"] = week.ToString();
@@ -105,7 +105,7 @@ namespace HomeWebApp
 
                 pnlStats.Visible = true;
                 pnlMakePicks.Visible = false;
-                
+
                 loadAllDataGrids();
                 buildForum();
 

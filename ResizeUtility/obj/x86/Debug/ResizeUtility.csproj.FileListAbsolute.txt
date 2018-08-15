@@ -9,3 +9,9 @@ D:\SF-11789\Main\Programs\HomeApps\ResizeUtility\obj\x86\Debug\ResizeUtility.csp
 D:\SF-11789\Main\Programs\HomeApps\ResizeUtility\obj\x86\Debug\ResizeUtility.csproj.CoreCompileInputs.cache
 D:\SF-11789\Main\Programs\HomeApps\ResizeUtility\obj\x86\Debug\ResizeUtility.exe
 D:\SF-11789\Main\Programs\HomeApps\ResizeUtility\obj\x86\Debug\ResizeUtility.pdb
+C:\Main\Code\HomeApps\ResizeUtility\bin\Debug\ResizeUtility.exe
+C:\Main\Code\HomeApps\ResizeUtility\bin\Debug\ResizeUtility.pdb
+C:\Main\Code\HomeApps\ResizeUtility\obj\x86\Debug\ResizeUtility.csprojResolveAssemblyReference.cache
+C:\Main\Code\HomeApps\ResizeUtility\obj\x86\Debug\ResizeUtility.csproj.CoreCompileInputs.cache
+C:\Main\Code\HomeApps\ResizeUtility\obj\x86\Debug\ResizeUtility.exe
+C:\Main\Code\HomeApps\ResizeUtility\obj\x86\Debug\ResizeUtility.pdb

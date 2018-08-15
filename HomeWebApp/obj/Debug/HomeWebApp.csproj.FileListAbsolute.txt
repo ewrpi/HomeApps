@@ -32,3 +32,14 @@ D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csprojResolve
 D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csproj.CoreCompileInputs.cache
 D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.dll
 D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.pdb
+C:\Main\Code\HomeApps\HomeWebApp\bin\Styles\style.css
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeWebApp.dll.config
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeWebApp.dll
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeWebApp.pdb
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeAppsLib.dll
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeAppsLib.pdb
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csprojResolveAssemblyReference.cache
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csproj.CoreCompileInputs.cache
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csproj.CopyComplete
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.dll
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.pdb

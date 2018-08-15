@@ -5,6 +5,39 @@ using System.Text;
 
 namespace HomeAppsLib
 {
+    public class TimeLogItem
+    {
+        public string Desc { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public TimeSpan Duration { get; set; }
+    }
+    public class TimeLog
+    {
+        public List<TimeLogItem> Items { get; set; }
+
+        public TimeLog()
+        {
+            Items = new List<TimeLogItem>();
+            Items.Add(new TimeLogItem { Desc = "init", TimeStamp = DateTime.Now, Duration = TimeSpan.Zero });
+        }
+
+        public void Add(string desc)
+        {
+            TimeLogItem item = new TimeLogItem();
+            item.Desc = desc;
+            item.TimeStamp = DateTime.Now;
+            item.Duration = item.TimeStamp - Items.Last().TimeStamp;
+
+            Items.Add(item);
+        }
+
+        public void Print(string fileName)
+        {
+            string print = string.Join("\r\n\r\n", Items.OrderByDescending(i => i.Duration).Select(i => i.Desc + "||" + i.TimeStamp.ToString() + "||" + i.Duration.Seconds).ToArray());
+            System.IO.File.WriteAllText(@"c:\temp\" + fileName + ".txt", print);
+        }
+    }
+
     public class LibCommon
     {
         public static db.dataDataContext DBModel()

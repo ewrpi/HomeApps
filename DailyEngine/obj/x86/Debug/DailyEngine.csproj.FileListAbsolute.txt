@@ -15,3 +15,13 @@ D:\SF-11789\Main\Programs\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csprojR
 D:\SF-11789\Main\Programs\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csproj.CoreCompileInputs.cache
 D:\SF-11789\Main\Programs\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.exe
 D:\SF-11789\Main\Programs\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.pdb
+C:\Main\Code\HomeApps\DailyEngine\bin\Debug\DailyEngine.exe.config
+C:\Main\Code\HomeApps\DailyEngine\bin\Debug\DailyEngine.exe
+C:\Main\Code\HomeApps\DailyEngine\bin\Debug\DailyEngine.pdb
+C:\Main\Code\HomeApps\DailyEngine\bin\Debug\HomeAppsLib.dll
+C:\Main\Code\HomeApps\DailyEngine\bin\Debug\HomeAppsLib.pdb
+C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csprojResolveAssemblyReference.cache
+C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csproj.CoreCompileInputs.cache
+C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csproj.CopyComplete
+C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.exe
+C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.pdb

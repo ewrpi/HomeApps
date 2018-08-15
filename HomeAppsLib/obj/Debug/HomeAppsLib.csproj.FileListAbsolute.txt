@@ -9,3 +9,8 @@ D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.csprojResol
 D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.csproj.CoreCompileInputs.cache
 D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.dll
 D:\SF-11789\Main\Programs\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.pdb
+C:\Main\Code\HomeApps\HomeAppsLib\bin\Debug\HomeAppsLib.dll
+C:\Main\Code\HomeApps\HomeAppsLib\bin\Debug\HomeAppsLib.pdb
+C:\Main\Code\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.csproj.CoreCompileInputs.cache
+C:\Main\Code\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.dll
+C:\Main\Code\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.pdb
