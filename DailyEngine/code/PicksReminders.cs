@@ -57,8 +57,8 @@ namespace DailyEngine
                     if (daysLeft == 0)
                         subject = "Picks expire today!";
 
-                    if (DateTime.Now < new DateTime(2016, 9, 10))
-                        subject = "FEATURING CORY QUICK PICKS!! " + subject;
+                    //if (DateTime.Now < new DateTime(2016, 9, 10))
+                    //    subject = "FEATURING CORY QUICK PICKS!! " + subject;
 
                     string body = "Hi, " + user.name + "!<br><br>";
                     body += "Remember, picks for <b>" + weekAboutToExpire.text + "</b> will expire on " + weekAboutToExpire.exp_dt.ToLongDateTimeDisplay() + "!<br><br>";
@@ -69,11 +69,17 @@ namespace DailyEngine
                     body += "<br><br><br><span style='font-size:small;'>P.S. If you'd like to unsubscribe from this email, click <a href='" + EmailSubscriptions.LinkToUnsubscripe(user, (int)emailSubscriptionType) + "'>here.</a></span>";
 
                     LibCommon.SendEmail(to, subject, body, "The Wright Picks");
+
+                    if (user.name.ToLower() == "cory")
+                    {
+                        HomeAppsLib.LibCommon.SendCoryText(weekAboutToExpire.week);
+                    }
+
                     count++;
                 }
             }
 
             return count;
-        }
+        }        
     }
 }

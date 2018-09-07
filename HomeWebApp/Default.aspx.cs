@@ -15,21 +15,23 @@ namespace HomeWebApp
             lbl_IPAddress.Text = ip;
             lbl_remoteHost.Text = Request.ServerVariables["REMOTE_HOST"];
 
-            if (!Page.IsPostBack)
-            {
-                if (Common.UserHasCustomMessage(ip))
-                {
-                    pnlHasMessage.Visible = true;
-                    pnlNoMessage.Visible = false;
-                    txtExistingMessage.Text = Common.GetUserCustomMessage(ip);
-                }
+            //HomeAppsLib.LibCommon.SendEmail("eric@hackerdevs.com", "testing zoho email", "did you get it?", "The Wright Picks");
 
-                else
-                {
-                    pnlHasMessage.Visible = false;
-                    pnlNoMessage.Visible = true;
-                }
-            }
+            //if (!Page.IsPostBack)
+            //{
+            //    if (Common.UserHasCustomMessage(ip))
+            //    {
+            //        pnlHasMessage.Visible = true;
+            //        pnlNoMessage.Visible = false;
+            //        txtExistingMessage.Text = Common.GetUserCustomMessage(ip);
+            //    }
+
+            //    else
+            //    {
+            //        pnlHasMessage.Visible = false;
+            //        pnlNoMessage.Visible = true;
+            //    }
+            //}
         }        
 
         protected void btn_send_Click(object sender, EventArgs e)

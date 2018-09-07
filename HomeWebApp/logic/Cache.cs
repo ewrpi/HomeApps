@@ -306,6 +306,7 @@ namespace HomeWebApp
             dt.Columns.Add("Name");
             dt.Columns.Add("W-L");
             dt.Columns.Add("$$");
+            dt.Columns.Add("Breakdown");
             dt.Columns.Add("Money", typeof(decimal)); // for sorting purposes only, remove later
 
             foreach (string user in Authentication.BetUsers(yearId))
@@ -336,6 +337,7 @@ namespace HomeWebApp
                 System.Data.DataRow dr = dt.NewRow();
                 dr["Name"] = user;
                 dr["$$"] = "<span title='" + breakdown + "'>" + valueString + "</span>";
+                dr["Breakdown"] = breakdown;
                 dr["Money"] = value;
                 dr["W-L"] = ratio.Split('/')[0] + " & " + (Convert.ToInt32(ratio.Split('/')[1]) - Convert.ToInt32(ratio.Split('/')[0]));
 

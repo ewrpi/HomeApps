@@ -43,3 +43,5 @@ C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csproj.CoreCompileInputs.c
 C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csproj.CopyComplete
 C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.dll
 C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.pdb
+C:\Main\Code\HomeApps\HomeWebApp\bin\Newtonsoft.Json.dll
+C:\Main\Code\HomeApps\HomeWebApp\bin\Newtonsoft.Json.xml

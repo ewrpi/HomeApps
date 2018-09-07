@@ -25,3 +25,5 @@ C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csproj.CoreCompileIn
 C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csproj.CopyComplete
 C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.exe
 C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.pdb
+C:\Main\Code\HomeApps\DailyEngine\bin\Debug\Newtonsoft.Json.dll
+C:\Main\Code\HomeApps\DailyEngine\bin\Debug\Newtonsoft.Json.xml

@@ -97,10 +97,10 @@ namespace HomeWebApp
 
         internal static string DBConnectionString()
         {
-            bool dev = Environment.MachineName.ToLower() == "sf-11789";
-            string conStrKey = dev ? "HomeWebAppDBConnectionStringDev" : "HomeWebAppDBConnectionStringProd";
+            //bool dev = Environment.MachineName.ToLower() == "sf-11789";
+            //string conStrKey = dev ? "HomeWebAppDBConnectionStringDev" : "HomeWebAppDBConnectionStringProd";
 
-            return System.Configuration.ConfigurationManager.ConnectionStrings[conStrKey].ConnectionString;
+            return System.Configuration.ConfigurationManager.ConnectionStrings["HomeWebAppDBConnectionString"].ConnectionString;
         }
 
         internal static db.DBModelDataContext DBModel()

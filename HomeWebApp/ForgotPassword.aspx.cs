@@ -39,7 +39,7 @@ namespace HomeWebApp
                 body += "Name: " + tbName.Text + "<br>";
                 body += "Email: " + tbEmail.Text + "<br>";
 
-                Common.SendEmail("eric.wright85@gmail.com", "User requesting credentials", body, tbName.Text);
+                Common.SendEmail("eric@hackerdevs.com", "User requesting credentials", body, tbName.Text);
                 lblStatus.Text = "Request send to system admin... Eric will respond under the Wright family tradition of \"right here directly\", or otherwise known as when he acquires a Round Toit.";
             }
         }

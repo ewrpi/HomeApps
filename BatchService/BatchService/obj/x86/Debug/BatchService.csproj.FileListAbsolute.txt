@@ -25,3 +25,5 @@ C:\Main\Code\HomeApps\BatchService\BatchService\obj\x86\Debug\BatchService.cspro
 C:\Main\Code\HomeApps\BatchService\BatchService\obj\x86\Debug\BatchService.csproj.CopyComplete
 C:\Main\Code\HomeApps\BatchService\BatchService\obj\x86\Debug\BatchService.exe
 C:\Main\Code\HomeApps\BatchService\BatchService\obj\x86\Debug\BatchService.pdb
+C:\Main\Code\HomeApps\BatchService\BatchService\bin\Debug\Newtonsoft.Json.dll
+C:\Main\Code\HomeApps\BatchService\BatchService\bin\Debug\Newtonsoft.Json.xml
