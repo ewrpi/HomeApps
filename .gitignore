@@ -3,6 +3,7 @@
 /obj/
 /sqlite3/
 /v15/
+db.lock
 
 # Windows image file caches
 Thumbs.db
@@ -22,6 +23,7 @@ $RECYCLE.BIN/
 *.exe
 *.pdb
 *.dll
+
 
 # Windows shortcuts
 *.lnk

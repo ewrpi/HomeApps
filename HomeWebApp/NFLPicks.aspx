@@ -439,7 +439,7 @@
                     <asp:LinkButton ID="linkRefresh" ForeColor="Yellow" runat="server" onclick="linkRefresh_Click">Refresh</asp:LinkButton>        
     &nbsp;&nbsp;&nbsp;
                     <%--<a target="_blank" href="http://www.nfl.com/liveupdate/scorestrip/ss.xml" style="color:yellow;">Check API</a>--%>
-                    <a target="_blank" href="http://www.nfl.com/liveupdate/scores/scores.json" style="color:yellow;">Check API</a>
+                    <a target="_blank" href="http://static.nfl.com/liveupdate/scores/scores.json" style="color:yellow;">Check API</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              
     <asp:DropDownList ID="ddlUsersThatCanByAdded" runat="server" Visible="False">

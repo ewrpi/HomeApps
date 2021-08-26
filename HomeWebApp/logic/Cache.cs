@@ -379,12 +379,18 @@ namespace HomeWebApp
                 usersToAdd = Common.getUsersToAddToMatchupsGrid();
             System.Data.DataTable matchups = ConstructMatchupsDT(usersToAdd);
 
-            foreach (var t in data.NFL_Matchups.Where(x => x.week == week).OrderBy(x => x.id))
+            var dbMatchups = data.NFL_Matchups.Where(x => x.week == week).OrderBy(x => x.id).ToList();
+            bool showLive = dbMatchups.Any(m => m.live_update != null);
+
+            if (showLive)
+                matchups.Columns.Add("Now");
+
+            foreach (var t in dbMatchups)
             {
                 System.Data.DataRow row = matchups.NewRow();
 
                 row["Date"] = DateFromEID(t.eid);
-                row["Scheduled"] = t.scheduled;
+                row["Channel"] = t.channel?.Split(' ')[0]; // just because NFL NETWORK is so fucking long
                 row["Visitor"] = t.away;
                 row["VisitorScore"] = t.away_score;
                 row["Home"] = t.home;
@@ -395,6 +401,9 @@ namespace HomeWebApp
                 //    row[user] = DidUserMakeThisPick(t.home, t.week, user) ? t.home : DidUserMakeThisPick(t.away, t.week, user) ? t.away : "NONE"; // there is a bug here if they made no picks.
                 row["Winner"] = t.winner ?? "??";
 
+                if (showLive)
+                    row["Now"] = t.live_update ?? string.Empty;
+
                 matchups.Rows.Add(row);
             }
             return matchups;
@@ -403,7 +412,7 @@ namespace HomeWebApp
         {
             System.Data.DataTable matchups = new System.Data.DataTable();
             matchups.Columns.Add("Date");
-            matchups.Columns.Add("Scheduled");
+            matchups.Columns.Add("Channel");
             matchups.Columns.Add("Visitor");
             matchups.Columns.Add("VisitorScore");
             matchups.Columns.Add("Home");

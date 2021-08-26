@@ -16,7 +16,7 @@ namespace BatchService
     {
         static int _exceptionCount = 0;
         const int EXCEPTION_THRESHOLD = 30;
-        const int RUN_INVERVAL_MINUTES = 15;
+        //const int RUN_INVERVAL_MINUTES = 15;
 
         public Service()
         {
@@ -65,12 +65,15 @@ namespace BatchService
                         catch { }
                     }
 
+                    // sleep only 15 seconds during gameplay, otherwise 15 minutes
+                    int sleep = changesMade ? 1000 * 15 : 1000 * 60 * 15;
+
                     // 3. report
                     if (LibCommon.IsAppInTestMode())
-                        LibCommon.SendEmail("eric@hackerdevs.com", "Console Service Successful", "At " + DateTime.Now, "Console Service");
+                        LibCommon.SendEmail("eric@hackerdevs.com", "Console Service Successful", "At " + DateTime.Now + ". Sleep = " + sleep, "Console Service");
 
-                    // 4. wait
-                    System.Threading.Thread.Sleep(1000 * 60 * RUN_INVERVAL_MINUTES);
+                    // 4. wait                    
+                    System.Threading.Thread.Sleep(sleep);
                 }
                 catch (Exception ex)
                 {

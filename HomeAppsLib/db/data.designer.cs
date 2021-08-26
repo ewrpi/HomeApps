@@ -2286,40 +2286,49 @@ namespace HomeAppsLib.db
 		private string _status;
 		
 		private string _scheduled;
-		
-		private System.Nullable<long> _eid;
+        private string _channel;
+        private string _live_update;
+        private string _stadium;
+
+        private System.Nullable<long> _eid;
 		
 		private System.Nullable<int> _year_week;
 		
 		private EntityRef<NFL_week> _NFL_week;
 		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnweekChanging(int value);
-    partial void OnweekChanged();
-    partial void OnawayChanging(string value);
-    partial void OnawayChanged();
-    partial void OnhomeChanging(string value);
-    partial void OnhomeChanged();
-    partial void OnwinnerChanging(string value);
-    partial void OnwinnerChanged();
-    partial void Onhome_scoreChanging(System.Nullable<int> value);
-    partial void Onhome_scoreChanged();
-    partial void Onaway_scoreChanging(System.Nullable<int> value);
-    partial void Onaway_scoreChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
-    partial void OnscheduledChanging(string value);
-    partial void OnscheduledChanged();
-    partial void OneidChanging(System.Nullable<long> value);
-    partial void OneidChanged();
-    partial void Onyear_weekChanging(System.Nullable<int> value);
-    partial void Onyear_weekChanged();
-    #endregion
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnidChanging(int value);
+        partial void OnidChanged();
+        partial void OnweekChanging(int value);
+        partial void OnweekChanged();
+        partial void OnawayChanging(string value);
+        partial void OnawayChanged();
+        partial void OnhomeChanging(string value);
+        partial void OnhomeChanged();
+        partial void OnwinnerChanging(string value);
+        partial void OnwinnerChanged();
+        partial void Onhome_scoreChanging(System.Nullable<int> value);
+        partial void Onhome_scoreChanged();
+        partial void Onaway_scoreChanging(System.Nullable<int> value);
+        partial void Onaway_scoreChanged();
+        partial void OnstatusChanging(string value);
+        partial void OnstatusChanged();
+        partial void OnscheduledChanging(string value);
+        partial void OnchannelChanging(string value);
+        partial void Onlive_updateChanging(string value);
+        partial void OnstadiumChanging(string value);
+        partial void OnscheduledChanged();
+        partial void OnchannelChanged();
+        partial void Onlive_updateChanged();
+        partial void OnstadiumChanged();
+        partial void OneidChanging(System.Nullable<long> value);
+        partial void OneidChanged();
+        partial void Onyear_weekChanging(System.Nullable<int> value);
+        partial void Onyear_weekChanged();
+        #endregion
 		
 		public NFL_Matchup()
 		{
@@ -2510,8 +2519,65 @@ namespace HomeAppsLib.db
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eid", DbType="BigInt")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_channel", DbType = "VarChar(10)")]
+        public string channel
+        {
+            get
+            {
+                return this._channel;
+            }
+            set
+            {
+                if ((this._channel != value))
+                {
+                    this.OnchannelChanging(value);
+                    this.SendPropertyChanging();
+                    this._channel = value;
+                    this.SendPropertyChanged("channel");
+                    this.OnchannelChanged();
+                }
+            }
+        }
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_live_update", DbType = "VarChar(10)")]
+        public string live_update
+        {
+            get
+            {
+                return this._live_update;
+            }
+            set
+            {
+                if ((this._live_update != value))
+                {
+                    this.Onlive_updateChanging(value);
+                    this.SendPropertyChanging();
+                    this._live_update = value;
+                    this.SendPropertyChanged("live_update");
+                    this.Onlive_updateChanged();
+                }
+            }
+        }
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_stadium", DbType = "VarChar(10)")]
+        public string stadium
+        {
+            get
+            {
+                return this._stadium;
+            }
+            set
+            {
+                if ((this._stadium != value))
+                {
+                    this.OnstadiumChanging(value);
+                    this.SendPropertyChanging();
+                    this._stadium = value;
+                    this.SendPropertyChanged("stadium");
+                    this.OnstadiumChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eid", DbType="BigInt")]
 		public System.Nullable<long> eid
 		{
 			get

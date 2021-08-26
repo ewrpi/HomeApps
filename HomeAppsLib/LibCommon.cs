@@ -53,13 +53,16 @@ namespace HomeAppsLib
             return System.Configuration.ConfigurationManager.ConnectionStrings["HomeWebAppDBConnectionString"].ConnectionString;
         }
 
-        public static string SendEmail(string to, string subject, string body, string displayName)
+        public static string SendEmail(string to, string subject, string body, string displayName, TimeSpan? waitAfter = null)
         {
-            return SendEmail(to, subject, body, displayName, true);
+            return SendEmail(to, subject, body, displayName, true, waitAfter: waitAfter);
         }
 
-        private static string SendEmail(string to, string subject, string body, string displayName, bool logEmail)
+        private static string SendEmail(string to, string subject, string body, string displayName, bool logEmail, TimeSpan? waitAfter = null)
         {
+            if (string.IsNullOrEmpty(to))
+                return "parameter 'to' was sent to method 'SendEmail' as an empty or null string";
+
             // return "Email Service is Down";
             bool success;
             string message;
@@ -85,6 +88,11 @@ namespace HomeAppsLib
                 mail.IsBodyHtml = true;
 
                 client.Send(mail);
+
+                if (waitAfter.HasValue)
+                {
+                    System.Threading.Thread.Sleep((int)waitAfter.Value.TotalMilliseconds);
+                }
 
                 success = true;
                 message = "Success";
@@ -136,11 +144,22 @@ namespace HomeAppsLib
             //return SendText("7138051398", "Make your picks! Click here: " + url);
             //return SendText("8325676572", "Make your picks! Click here: " + url);
         }
+        public static string SendJCText(int week)
+        {
+            //href = '" + LibCommon.WebsiteUrlRoot() + "nflpicks.aspx?quickpicks=true&autoweek=" + weekAboutToExpire.week + "&sso=" + LibCommon.SSOUserKey(user) + "'
+            string url = "http://www.thewrightpicks.com/nflpicks.aspx?quickpicks=true&autoweek=" + week + "&sso=8C6E63886CD5DFFFEE916C012753C42016140864289A17B9CF151776DFFA5D25";
+            //string message = "<a href='" + url + "'>CLICK HERE YOU MAKE YOUR PICKS!</a>";
+            string message = "[url=" + url + "]CLICK HERE YOU MAKE YOUR PICKS![/url]";
 
-        public static string SendText(string number, string message)
+            //return SendText("7134580859", "Make your picks! Click here: " + url, domain: "tmomail.net");
+            return SendText("7138051398", message);
+            //return SendText("8325676572", "Make your picks! Click here: " + url);
+        }
+
+        public static string SendText(string number, string message, string domain = "pm.sprint.com")
         {
             // href='" + LibCommon.WebsiteUrlRoot() + "nflpicks.aspx?quickpicks=true&autoweek=" + weekAboutToExpire.week + "&sso=" + LibCommon.SSOUserKey(user) + "'
-            string to = number + "@pm.sprint.com";
+            string to = number + "@" + domain;
             return SendEmail(to, string.Empty, message, "The Wright Picks");
         }
 
@@ -346,7 +365,7 @@ namespace HomeAppsLib
             {
                 System.Net.WebClient client = new System.Net.WebClient();
                 NFL_API_Json model = new NFL_API_Json();
-                string json = client.DownloadString("http://www.nfl.com/liveupdate/scores/scores.json");
+                string json = client.DownloadString("http://static.nfl.com/liveupdate/scores/scores.json");
                 model.Matchups = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, Matchup>>(json);
 
                 var data = DBModel();
@@ -369,8 +388,8 @@ namespace HomeAppsLib
                     KeyValuePair<string, Matchup> apiMatchup = new KeyValuePair<string, Matchup>();
 
                     // regular season
-                    if (matchup.NFL_week.weekTypeId == (int)WeekTypes.RegularSeason)
-                    {
+                    //if (matchup.NFL_week.weekTypeId == (int)WeekTypes.RegularSeason)
+                    //{
                         apiMatchup = model.Matchups.FirstOrDefault(m => m.Value.away.abbr == GetAbbreviation(matchup.away) && m.Value.home.abbr == GetAbbreviation(matchup.home));
                         //node = xDocRegSeason.SelectSingleNode("//ss/gms[@w='" + week + "' and @y='" + year + "' and @t='R']/g[@hnn='" + matchup.home.ToLower() + "' and @vnn='" + matchup.away.ToLower() + "']");
                         if (apiMatchup.Key != null)
@@ -378,7 +397,7 @@ namespace HomeAppsLib
                             UpdateMatchup(matchup, apiMatchup);
                             changesMade = true;
                         }
-                    }
+                    //}
 
                     // pre season
                     //if (matchup.NFL_week.weekTypeId == (int)WeekTypes.PreSeason)
@@ -457,7 +476,7 @@ namespace HomeAppsLib
             { "Buccaneers", "TB" },
             { "Giants", "NYG" },
             { "Cowboys", "DAL" },
-            { "Redskins", "WAS" },
+            { "Football Team", "WAS" },
             { "Eagles", "PHI" },
             { "Cardinals", "ARI" },
             { "49ers", "SF" },
@@ -474,7 +493,7 @@ namespace HomeAppsLib
             { "Broncos", "DEN" },
             { "Chargers", "LAC" },
             { "Chiefs", "KC" },
-            { "Raiders", "OAK" },
+            { "Raiders", "LV" },
             { "NFC", "NFC" },
             { "AFC", "AFC" }
         };
@@ -534,6 +553,17 @@ namespace HomeAppsLib
             matchup.eid = Convert.ToInt64(node.Key);
             //matchup.scheduled = node.Attributes["d"].Value + " " + DateTime.Parse(node.Attributes["t"] == null ? "1:00 AM" : node.Attributes["t"].Value).AddHours(-1).ToShortTimeString().Split(' ')[0];
             matchup.scheduled = node.Key;
+            matchup.channel = node.Value.media.tv;            
+            matchup.stadium = node.Value.stadium;
+
+            int statusInt;
+            bool live = int.TryParse(node.Value.qtr, out statusInt);
+            matchup.live_update = live ?
+                matchup.live_update = node.Value.posteam + "'s ball. " + NumberToPosition(node.Value.down) + " and " + node.Value.togo + " on " + node.Value.yl + ". Clock: " + node.Value.clock :
+                null;
+
+            if (live)
+                _changesMade = true;
 
             if (matchup.status != null)
             {
@@ -548,7 +578,7 @@ namespace HomeAppsLib
                     _changesMade = true;
             }
 
-            if (matchup.status != null && matchup.status.StartsWith("F"))
+            if (matchup.status != null && matchup.status.ToLower().StartsWith("f"))
             {
                 string oldWinner = matchup.winner;
 
@@ -559,6 +589,30 @@ namespace HomeAppsLib
                 if (!string.IsNullOrEmpty(matchup.winner) && oldWinner != matchup.winner)
                     _changesMade = true;
             }
+        }
+
+        private string NumberToPosition(string number)
+        {
+            int num;
+            if (!int.TryParse(number, out num))
+                return number;
+
+            string suff;
+
+            int ones = num % 10;
+            int tens = (int)Math.Floor((decimal)num / 10) % 10;
+            if (tens == 1) {
+                suff = "th";
+            }
+            else {
+                switch (ones) {
+                    case 1 : suff = "st"; break;
+                    case 2 : suff = "nd"; break;
+                    case 3 : suff = "rd"; break;
+                    default : suff = "th";break;
+                }
+            }
+            return num + suff;
         }
 
         public static string SSOUserKey(db.user user)

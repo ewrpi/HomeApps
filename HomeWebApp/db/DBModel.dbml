@@ -89,6 +89,9 @@
       <Column Name="away_score" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="status" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="scheduled" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="live_update" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="channel" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="stadium" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eid" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="year_week" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NFL_week_NFL_Matchup" Member="NFL_week" ThisKey="week" OtherKey="week" Type="NFL_week" IsForeignKey="true" />

@@ -14,6 +14,7 @@ namespace HomeNativeApp
         [STAThread]
         static void Main()
         {
+            //HomeAppsLib.LibCommon.SendJCText(172);
             HomeAppsLib.LibCommon.UpdateNFLMatchups(false);
 
             Application.EnableVisualStyles();

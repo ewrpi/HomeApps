@@ -21,7 +21,7 @@ namespace DailyEngine
             {
                 foreach (HomeAppsLib.db.user user in EmailSubscriptions.GetSubscribedUsers(EmailSubscriptionType.DailyForumRecap))
                 {
-                    LibCommon.SendEmail(user.email, "Daily Disussion Recap", emailBody.Replace("XXXXXXXXXX", user.encPW), "The Wright Picks");
+                    LibCommon.SendEmail(user.email, "Daily Disussion Recap", emailBody.Replace("XXXXXXXXXX", user.encPW), "The Wright Picks", waitAfter: TimeSpan.FromSeconds(1));
                     emailCount++;
                 }
             }
