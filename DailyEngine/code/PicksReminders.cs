@@ -42,8 +42,6 @@ namespace DailyEngine
         private static int SendReminderEmails(HomeAppsLib.db.NFL_week weekAboutToExpire, EmailSubscriptionType emailSubscriptionType)
         {
             int count = 0;
-            count++;
-            count--;
 
             foreach (var user in EmailSubscriptions.GetSubscribedUsers(emailSubscriptionType))
             {

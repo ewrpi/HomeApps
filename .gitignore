@@ -5,6 +5,7 @@
 /HomeApps/v15/
 db.lock
 /Debug/
+*.suo
 
 # Windows image file caches
 Thumbs.db
