@@ -1,6 +1,8 @@
-obj/
-Debug/
-
+#eric's additions
+/bin/
+/obj/
+/sqlite3/
+/v15/
 
 # Windows image file caches
 Thumbs.db
@@ -17,6 +19,9 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+*.exe
+*.pdb
+*.dll
 
 # Windows shortcuts
 *.lnk
