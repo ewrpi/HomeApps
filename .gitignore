@@ -2,8 +2,9 @@
 /bin/
 /obj/
 /sqlite3/
-/v15/
+/HomeApps/v15/
 db.lock
+/Debug/
 
 # Windows image file caches
 Thumbs.db

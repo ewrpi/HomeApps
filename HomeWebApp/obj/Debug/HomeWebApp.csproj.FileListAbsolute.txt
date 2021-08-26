@@ -1,0 +1,47 @@
+C:\Users\eric.wright\Desktop\HomeWebApp\HomeWebApp\bin\HomeWebApp.dll
+C:\Users\eric.wright\Desktop\HomeWebApp\HomeWebApp\bin\HomeWebApp.pdb
+C:\Users\eric.wright\Desktop\HomeWebApp\HomeWebApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\eric.wright\Desktop\HomeWebApp\HomeWebApp\obj\Debug\HomeWebApp.dll
+C:\Users\eric.wright\Desktop\HomeWebApp\HomeWebApp\obj\Debug\HomeWebApp.pdb
+C:\Main\Programs\HomeWebApp\HomeWebApp\bin\HomeWebApp.dll
+C:\Main\Programs\HomeWebApp\HomeWebApp\bin\HomeWebApp.pdb
+C:\Main\Programs\HomeWebApp\HomeWebApp\obj\Debug\HomeWebApp.dll
+C:\Main\Programs\HomeWebApp\HomeWebApp\obj\Debug\HomeWebApp.pdb
+C:\Important Files\HomeWebApp\HomeWebApp\bin\HomeWebApp.dll
+C:\Important Files\HomeWebApp\HomeWebApp\bin\HomeWebApp.pdb
+C:\Important Files\HomeWebApp\HomeWebApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Important Files\HomeWebApp\HomeWebApp\obj\Debug\HomeWebApp.dll
+C:\Important Files\HomeWebApp\HomeWebApp\obj\Debug\HomeWebApp.pdb
+C:\Main\Programs\HomeWebApp\HomeWebApp\obj\Debug\HomeWebApp.csprojResolveAssemblyReference.cache
+C:\Main\Programs\HomeWebApp\HomeWebApp\bin\Styles\style.css
+C:\Main\Programs\HomeApps\HomeWebApp\bin\Styles\style.css
+C:\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.dll
+C:\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.pdb
+C:\Main\Programs\HomeApps\HomeWebApp\bin\HomeAppsLib.dll
+C:\Main\Programs\HomeApps\HomeWebApp\bin\HomeAppsLib.pdb
+C:\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csprojResolveAssemblyReference.cache
+C:\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.dll
+C:\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\Styles\style.css
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.dll.config
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeWebApp.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeAppsLib.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\bin\HomeAppsLib.pdb
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csprojResolveAssemblyReference.cache
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csproj.CoreCompileInputs.cache
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.dll
+D:\SF-11789\Main\Programs\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.pdb
+C:\Main\Code\HomeApps\HomeWebApp\bin\Styles\style.css
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeWebApp.dll.config
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeWebApp.dll
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeWebApp.pdb
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeAppsLib.dll
+C:\Main\Code\HomeApps\HomeWebApp\bin\HomeAppsLib.pdb
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csprojResolveAssemblyReference.cache
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csproj.CoreCompileInputs.cache
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.csproj.CopyComplete
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.dll
+C:\Main\Code\HomeApps\HomeWebApp\obj\Debug\HomeWebApp.pdb
+C:\Main\Code\HomeApps\HomeWebApp\bin\Newtonsoft.Json.dll
+C:\Main\Code\HomeApps\HomeWebApp\bin\Newtonsoft.Json.xml
