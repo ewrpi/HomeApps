@@ -14,6 +14,9 @@ namespace DailyEngine
         {
             try
             {
+                LibCommon.UpdateNFLMatchups(false);
+                return;
+
                 DateTime start = DateTime.Now; // start timestamp
 
                 // run program                

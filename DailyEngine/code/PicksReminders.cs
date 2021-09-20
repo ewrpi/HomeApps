@@ -68,7 +68,7 @@ namespace DailyEngine
                     body += "Thanks,<br>The Wright Picks";
                     body += "<br><br><br><span style='font-size:small;'>P.S. If you'd like to unsubscribe from this email, click <a href='" + EmailSubscriptions.LinkToUnsubscripe(user, (int)emailSubscriptionType) + "'>here.</a></span>";
 
-                    LibCommon.SendEmail(to, subject, body, "The Wright Picks", waitAfter: TimeSpan.FromSeconds(1));
+                    LibCommon.SendEmail(to, subject, body, "The Wright Picks", waitAfter: TimeSpan.FromSeconds(15));
 
                     if (user.name.ToLower() == "cory")
                     {

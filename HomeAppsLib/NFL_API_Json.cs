@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HomeAppsLib
+namespace HomeAppsLib.API.NFL
 {
     public class NFL_API_Json
     {

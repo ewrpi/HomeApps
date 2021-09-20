@@ -2,7 +2,7 @@
 /bin/
 /obj/
 /sqlite3/
-/HomeApps/v15/
+/.vs/HomeApps/v15/
 db.lock
 /Debug/
 *.suo

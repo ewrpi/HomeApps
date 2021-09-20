@@ -379,7 +379,11 @@ namespace HomeWebApp
                 usersToAdd = Common.getUsersToAddToMatchupsGrid();
             System.Data.DataTable matchups = ConstructMatchupsDT(usersToAdd);
 
-            var dbMatchups = data.NFL_Matchups.Where(x => x.week == week).OrderBy(x => x.id).ToList();
+            var dbMatchups = data.NFL_Matchups.Where(x => x.week == week).ToList();
+
+            try { dbMatchups = dbMatchups.OrderBy(d => Convert.ToDateTime(d.scheduled)).ToList(); }
+            catch { dbMatchups = dbMatchups.OrderBy(d => d.scheduled).ToList(); }
+
             bool showLive = dbMatchups.Any(m => m.live_update != null);
 
             if (showLive)
@@ -389,7 +393,8 @@ namespace HomeWebApp
             {
                 System.Data.DataRow row = matchups.NewRow();
 
-                row["Date"] = DateFromEID(t.eid);
+                //row["Date"] = DateFromEID(t.eid);
+                row["Date"] = t.scheduled;
                 row["Channel"] = t.channel?.Split(' ')[0]; // just because NFL NETWORK is so fucking long
                 row["Visitor"] = t.away;
                 row["VisitorScore"] = t.away_score;

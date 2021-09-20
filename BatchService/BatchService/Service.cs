@@ -59,7 +59,7 @@ namespace BatchService
                     {
                         try
                         {
-                            string url = LibCommon.WebsiteUrlRoot(local: true) + "LoadCache.aspx?key=true";
+                            string url = LibCommon.WebsiteUrlRoot() + "LoadCache.aspx?key=true";
                             client.DownloadString(url);
                         }
                         catch { }

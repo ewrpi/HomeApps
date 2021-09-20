@@ -16,7 +16,7 @@ namespace HomeAppsLib
                 .Select(x => x.username)
                 .ToArray();
 
-            return LibCommon.DBModel().users.Where(x => names.Contains(x.name) && x.email != null).ToArray();
+            return LibCommon.DBModel().users.Where(x => names.Contains(x.name) && x.email != null && x.IsActive).OrderBy(u => u.registration_dt).ToArray();
         }
 
         public static void AddSubscription(int subTypeId, string username)

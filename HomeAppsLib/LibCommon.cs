@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HomeAppsLib.API;
 
 namespace HomeAppsLib
 {
@@ -70,7 +71,7 @@ namespace HomeAppsLib
             try
             {
                 System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
-                System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.zoho.com");
+                System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.gmail.com");
                 client.EnableSsl = true;
                 client.Credentials = GetMyCredentials();
                 client.Port = 587;
@@ -166,10 +167,10 @@ namespace HomeAppsLib
         private static System.Net.NetworkCredential GetMyCredentials()
         {
             System.Net.NetworkCredential me = new System.Net.NetworkCredential();
-            //me.UserName = "thewrightpicks@gmail.com";
-            //me.Password = "DDEBB0F1-CAB5-4785-B069-476139015692";
-            me.UserName = "admin@thewrightpicks.com";
-            me.Password = "threwwu7";
+            me.UserName = "thewrightpicks@gmail.com";
+            me.Password = "DDEBB0F1-CAB5-4785-B069-476139015692";
+            //me.UserName = "admin@thewrightpicks.com";
+            //me.Password = "threwwu7";
             return me;
         }
 
@@ -216,12 +217,14 @@ namespace HomeAppsLib
             else return null;
         }
 
-        public static string WebsiteUrlRoot(bool local = false)
+        public static string WebsiteUrlRoot(/*bool local = false*/)
         {
-            if (LibCommon.IsDevelopmentEnvironment())
-                return "http://localhost:60002/";
+            //if (LibCommon.IsDevelopmentEnvironment())
+               // return "http://localhost:60002/";
 
-            return local ? "http://192.168.2.150/" : "http://www.thewrightpicks.com/";            
+            //return local ? "http://192.168.2.150/" : "http://www.thewrightpicks.com/";            
+
+            return "http://www.thewrightpicks.com/";
         }
 
         public static bool IsDevelopmentEnvironment()
@@ -259,7 +262,7 @@ namespace HomeAppsLib
             // note: async true will always return changeMade false. if calling async should disregard response.
             _changesMade = false;
             LibCommon m = new LibCommon();
-            System.Threading.Thread t = new System.Threading.Thread(m.DoUpdateNFLMatchupsJson);
+            System.Threading.Thread t = new System.Threading.Thread(m.DoUpdateNFLMatchupsESPN);
             t.Start();
             if (!async)
             {
@@ -352,7 +355,7 @@ namespace HomeAppsLib
             {
                 try
                 {
-                    if (IsAppInTestMode())
+                    //if (IsAppInTestMode())
                         LibCommon.SendEmail("eric@hackerdevs.com", "Exception in UpdateNFLMatchups()", ex.ToString(), "EricWrightSite"); 
                 }
                 catch { }
@@ -364,9 +367,9 @@ namespace HomeAppsLib
             try
             {
                 System.Net.WebClient client = new System.Net.WebClient();
-                NFL_API_Json model = new NFL_API_Json();
+                API.NFL.NFL_API_Json model = new API.NFL.NFL_API_Json();
                 string json = client.DownloadString("http://static.nfl.com/liveupdate/scores/scores.json");
-                model.Matchups = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, Matchup>>(json);
+                model.Matchups = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, API.NFL.Matchup>>(json);
 
                 var data = DBModel();
                 int[] nflYears = data.NFL_years.Where(x => x.sport_id == 100).Select(x => x.id).ToArray();
@@ -385,7 +388,7 @@ namespace HomeAppsLib
 
                     //System.Xml.XmlNode node = null;
 
-                    KeyValuePair<string, Matchup> apiMatchup = new KeyValuePair<string, Matchup>();
+                    KeyValuePair<string, API.NFL.Matchup> apiMatchup = new KeyValuePair<string, API.NFL.Matchup>();
 
                     // regular season
                     //if (matchup.NFL_week.weekTypeId == (int)WeekTypes.RegularSeason)
@@ -447,11 +450,64 @@ namespace HomeAppsLib
             {
                 try
                 {
-                    if (IsAppInTestMode())
-                        LibCommon.SendEmail("eric@hackerdevs.com", "Exception in UpdateNFLMatchups()", ex.ToString(), "EricWrightSite");
+                    //if (IsAppInTestMode())
+                        LibCommon.SendEmail("eric@hackerdevs.com", "Exception in DoUpdateNFLMatchupsJson()", ex.ToString(), "EricWrightSite");
                 }
                 catch { }
             }
+        }
+
+        private void DoUpdateNFLMatchupsESPN()
+        {
+            try
+            {
+                System.Net.WebClient client = new System.Net.WebClient();                
+                string json = client.DownloadString("http://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard");
+                API.ESPN.Feed model = Newtonsoft.Json.JsonConvert.DeserializeObject<API.ESPN.Feed>(json);
+
+                var data = DBModel();
+                int[] nflYears = data.NFL_years.Where(x => x.sport_id == 100).Select(x => x.id).ToArray();
+                int[] nflWeeks = data.NFL_weeks.Where(x => nflYears.Contains(x.year_id.Value)).Select(x => x.week).ToArray();
+
+                var matchupsWithoutWinner = data.NFL_Matchups.Where(x => x.winner == null && nflWeeks.Contains(x.week) && model.week.number == x.year_week).ToList();                
+
+                foreach (var matchup in matchupsWithoutWinner)
+                {
+                    int week = matchup.year_week ?? matchup.week;
+                    int yearId = data.NFL_weeks.First(x => x.week == matchup.week).year_id ?? 1;
+                    int year = data.NFL_years.First(x => x.id == yearId).year;
+                    
+                    API.ESPN.Event apiMatchup = model.events.FirstOrDefault(m => 
+                        CheckForWeirdName(m.competitions.First().competitors.First(c => c.homeAway == "home").team.shortDisplayName) == matchup.home &&
+                        CheckForWeirdName(m.competitions.First().competitors.First(c => c.homeAway == "away").team.shortDisplayName) == matchup.away);                    
+                    
+                    if (apiMatchup != null)
+                        UpdateMatchup(matchup, apiMatchup);
+                }
+
+                if (_changesMade)
+                    data.SubmitChanges();
+
+                checkIfWeeksNeedToBeClosed();
+
+
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    //if (IsAppInTestMode())
+                        LibCommon.SendEmail("eric@hackerdevs.com", "Exception in DoUpdateNFLMatchupsESPN()", ex.ToString(), "EricWrightSite");
+                }
+                catch { }
+            }
+        }
+
+        private string CheckForWeirdName(string name)
+        {
+            if (name.ToLower() == "washington")
+                return "Football Team";
+            return name;
         }
 
         private string GetAbbreviation(string teamName)
@@ -547,7 +603,8 @@ namespace HomeAppsLib
                     _changesMade = true;
             }
         }
-        private void UpdateMatchup(db.NFL_Matchup matchup, KeyValuePair<string, Matchup> node)
+
+        private void UpdateMatchup(db.NFL_Matchup matchup, KeyValuePair<string, API.NFL.Matchup> node)
         {
             matchup.status = node.Value.qtr;
             matchup.eid = Convert.ToInt64(node.Key);
@@ -581,6 +638,66 @@ namespace HomeAppsLib
             if (matchup.status != null && matchup.status.ToLower().StartsWith("f"))
             {
                 string oldWinner = matchup.winner;
+
+                if (matchup.home_score > matchup.away_score) matchup.winner = matchup.home;
+                else if (matchup.away_score > matchup.home_score) matchup.winner = matchup.away;
+                else matchup.winner = "TIE";
+
+                if (!string.IsNullOrEmpty(matchup.winner) && oldWinner != matchup.winner)
+                    _changesMade = true;
+            }
+        }
+        private void UpdateMatchup(db.NFL_Matchup matchup, API.ESPN.Event node)
+        {
+            matchup.status = node.status.type.state;
+            matchup.eid = Convert.ToInt64(node.id);
+            matchup.scheduled = node.date.ToLocalTime().ToShortDateString();
+
+            List<string> channels = new List<string>();
+            node.competitions.ToList().ForEach(c => c.broadcasts.ToList().ForEach(b => b.names.ToList().ForEach(n => channels.Add(n))));
+            matchup.channel = string.Join(", ", channels.Distinct().ToArray());
+
+            List<string> venues = new List<string>();
+            node.competitions.ToList().ForEach(c => venues.Add(c.venue.fullName));
+            matchup.stadium = string.Join(", ", venues.Distinct().ToArray());
+
+            //int statusInt;
+            bool live = node.status.type.state != "pre" && node.status.type.state != "post";
+            matchup.live_update = live ?
+                matchup.live_update = $"Clock: { node.status.displayClock }, Quarter: { node.status.period }" :
+                null;
+
+            if (live)
+                _changesMade = true;
+
+            if (matchup.status != null)
+            {
+                int? oldHome = matchup.home_score;
+                int? oldAway = matchup.away_score;
+
+                int homeScore;
+                string homeScoreString = node.competitions.First().competitors.First(c => c.homeAway == "home").score;
+                if (int.TryParse(homeScoreString, out homeScore))
+                {
+                    matchup.home_score = homeScore;
+                }
+                int awayScore;
+                string awayScoreString = node.competitions.First().competitors.First(c => c.homeAway == "away").score;
+                if (int.TryParse(awayScoreString, out awayScore))
+                {
+                    matchup.away_score = awayScore;
+                }                
+
+                if (matchup.home_score.HasValue && matchup.away_score.HasValue &&
+                    (oldAway != matchup.away_score.Value || oldHome != matchup.home_score.Value))
+                    _changesMade = true;
+            }
+
+            if (matchup.status != null && node.status.type.shortDetail.ToLower().StartsWith("final"))
+            {
+                string oldWinner = matchup.winner;
+
+                matchup.status = node.status.type.shortDetail;
 
                 if (matchup.home_score > matchup.away_score) matchup.winner = matchup.home;
                 else if (matchup.away_score > matchup.home_score) matchup.winner = matchup.away;
