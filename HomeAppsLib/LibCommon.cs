@@ -70,6 +70,8 @@ namespace HomeAppsLib
 
             try
             {
+                System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
                 System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
                 System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.gmail.com");
                 client.EnableSsl = true;
@@ -473,9 +475,9 @@ namespace HomeAppsLib
 
                 foreach (var matchup in matchupsWithoutWinner)
                 {
-                    int week = matchup.year_week ?? matchup.week;
-                    int yearId = data.NFL_weeks.First(x => x.week == matchup.week).year_id ?? 1;
-                    int year = data.NFL_years.First(x => x.id == yearId).year;
+                    //int week = matchup.year_week ?? matchup.week;
+                   // int yearId = data.NFL_weeks.First(x => x.week == matchup.week).year_id ?? 1;
+                    //int year = data.NFL_years.First(x => x.id == yearId).year;
                     
                     API.ESPN.Event apiMatchup = model.events.FirstOrDefault(m => 
                         CheckForWeirdName(m.competitions.First().competitors.First(c => c.homeAway == "home").team.shortDisplayName) == matchup.home &&

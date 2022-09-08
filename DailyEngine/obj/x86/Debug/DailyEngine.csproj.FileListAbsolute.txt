@@ -20,10 +20,10 @@ C:\Main\Code\HomeApps\DailyEngine\bin\Debug\DailyEngine.exe
 C:\Main\Code\HomeApps\DailyEngine\bin\Debug\DailyEngine.pdb
 C:\Main\Code\HomeApps\DailyEngine\bin\Debug\HomeAppsLib.dll
 C:\Main\Code\HomeApps\DailyEngine\bin\Debug\HomeAppsLib.pdb
-C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csprojResolveAssemblyReference.cache
 C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csproj.CoreCompileInputs.cache
 C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csproj.CopyComplete
 C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.exe
 C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.pdb
 C:\Main\Code\HomeApps\DailyEngine\bin\Debug\Newtonsoft.Json.dll
 C:\Main\Code\HomeApps\DailyEngine\bin\Debug\Newtonsoft.Json.xml
+C:\Main\Code\HomeApps\DailyEngine\obj\x86\Debug\DailyEngine.csprojAssemblyReference.cache

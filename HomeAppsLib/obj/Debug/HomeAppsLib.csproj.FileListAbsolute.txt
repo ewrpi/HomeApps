@@ -17,4 +17,4 @@ C:\Main\Code\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.pdb
 C:\Main\Code\HomeApps\HomeAppsLib\bin\Debug\Newtonsoft.Json.dll
 C:\Main\Code\HomeApps\HomeAppsLib\bin\Debug\Newtonsoft.Json.xml
 C:\Main\Code\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.csproj.CopyComplete
-C:\Main\Code\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.csprojResolveAssemblyReference.cache
+C:\Main\Code\HomeApps\HomeAppsLib\obj\Debug\HomeAppsLib.csprojAssemblyReference.cache

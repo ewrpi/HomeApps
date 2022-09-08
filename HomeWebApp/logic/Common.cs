@@ -105,7 +105,7 @@ namespace HomeWebApp
 
         internal static db.DBModelDataContext DBModel()
         {
-            db.DBModelDataContext context = new db.DBModelDataContext(DBConnectionString());            
+            db.DBModelDataContext context = new db.DBModelDataContext(DBConnectionString());
             return context;
         }
 
