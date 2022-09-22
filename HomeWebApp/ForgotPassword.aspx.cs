@@ -40,7 +40,7 @@ namespace HomeWebApp
                 body += "Email: " + tbEmail.Text + "<br>";
 
                 Common.SendEmail("eric@hackerdevs.com", "User requesting credentials", body, tbName.Text);
-                lblStatus.Text = "Request send to system admin... Eric will respond under the Wright family tradition of \"right here directly\", or otherwise known as when he acquires a Round Toit.";
+                lblStatus.Text = "Request sent to system admin... Eric will respond under the Wright family tradition of \"right here directly\", or otherwise known as when he acquires a Round Toit.";
             }
         }
     }

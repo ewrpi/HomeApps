@@ -45,7 +45,9 @@ namespace DailyEngine
 
             foreach (var user in EmailSubscriptions.GetSubscribedUsers(emailSubscriptionType))
             {
-                if (LibCommon.DBModel().NFL_userPicks.Count(x => x.week == weekAboutToExpire.week && x.username == user.name) == 0)
+                if (LibCommon.DBModel().NFL_userPicks.Count(x => x.week == weekAboutToExpire.week && x.username == user.name) == 0 // haven't picked
+                    && LibCommon.DBModel().EmailLogs.Count(e => e.SendDate.Date == DateTime.Now.Date && e.EmailTo.Equals(user.email) && e.Success) == 0 // havne't been reminded today
+                    )
                 {
                     string to = LibCommon.IsDevelopmentEnvironment() ? "eric@hackerdevs.com" : user.email;
 

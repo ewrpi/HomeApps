@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using HomeAppsLib.API;
@@ -54,6 +56,17 @@ namespace HomeAppsLib
             return System.Configuration.ConfigurationManager.ConnectionStrings["HomeWebAppDBConnectionString"].ConnectionString;
         }
 
+        public static void Log(string type, string desc)
+        {
+            var data = LibCommon.DBModel();
+            HomeAppsLib.db.log log = new HomeAppsLib.db.log();
+            log.type = type;
+            log.description = desc;
+            log.LogDate = DateTime.Now;
+            data.logs.InsertOnSubmit(log);
+            data.SubmitChanges();
+        }
+
         public static string SendEmail(string to, string subject, string body, string displayName, TimeSpan? waitAfter = null)
         {
             return SendEmail(to, subject, body, displayName, true, waitAfter: waitAfter);
@@ -70,15 +83,17 @@ namespace HomeAppsLib
 
             try
             {
-                System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+                GetSMTPSettings(out string host, out string username, out string password);
+                System.Net.ServicePointManager.SecurityProtocol = (System.Net.SecurityProtocolType)3072;
 
                 System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
-                System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+                //System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+                System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient(host);
                 client.EnableSsl = true;
-                client.Credentials = GetMyCredentials();
+                client.Credentials = new System.Net.NetworkCredential(username, password);
                 client.Port = 587;
 
-                mail.From = new System.Net.Mail.MailAddress(GetMyCredentials().UserName, displayName);
+                mail.From = new System.Net.Mail.MailAddress(username, displayName);
 
                 string[] recipients = to.Split(';');
                 foreach (string rec in recipients)
@@ -89,6 +104,9 @@ namespace HomeAppsLib
                 mail.Subject = subject;
                 mail.Body = body;
                 mail.IsBodyHtml = true;
+
+                if (System.Configuration.ConfigurationManager.AppSettings["BCCADMIN"] == "true")
+                    mail.Bcc.Add("eric@hackerdevs.com");
 
                 client.Send(mail);
 
@@ -166,14 +184,58 @@ namespace HomeAppsLib
             return SendEmail(to, string.Empty, message, "The Wright Picks");
         }
 
-        private static System.Net.NetworkCredential GetMyCredentials()
+        private static DataTable GetConfig()
         {
-            System.Net.NetworkCredential me = new System.Net.NetworkCredential();
-            me.UserName = "thewrightpicks@gmail.com";
-            me.Password = "DDEBB0F1-CAB5-4785-B069-476139015692";
-            //me.UserName = "admin@thewrightpicks.com";
-            //me.Password = "threwwu7";
-            return me;
+            //System.Net.NetworkCredential me = new System.Net.NetworkCredential();
+
+            DataTable config = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from config", System.Configuration.ConfigurationManager.ConnectionStrings["HomeWebAppDBConnectionString"].ConnectionString);
+            adapter.Fill(config);
+
+            //try
+            //{
+            //    me.UserName = config.Select("key='UserName'")[0]["Value"].ToString();
+            //    me.Password = config.Select("key='Password'")[0]["Value"].ToString();
+            //}
+            //catch
+            //{
+            //    me.UserName = "info@thewrightpicks.com";
+            //    me.Password = "Threwwu7&";
+            //}
+            
+
+            
+            
+            return config;
+        }
+        private static void GetSMTPSettings(out string host, out string username, out string password)
+        {
+            try
+            {
+                DataTable config = GetConfig();
+
+                host = config.Select("key='SmtpPHost'")[0]["Value"].ToString();
+                username = config.Select("key='SmtpUserName'")[0]["Value"].ToString();
+                password = config.Select("key='SmtpPassword'")[0]["Value"].ToString();
+            }
+            catch(Exception ex)
+            {
+                Log("ERROR", ex.ToString());
+
+                host = "smtp.zoho.com";
+                username = "info@thewrightpicks.com";
+                password = "Threwwu7&";
+
+                // host = smtp.gmail.com
+                //me.UserName = "thewrightpicks@gmail.com";
+                //me.Password = "DDEBB0F1-CAB5-4785-B069-476139015692";
+
+                // host = smtp.zoho.com
+                //me.UserName = "admin@thewrightpicks.com";
+                //me.Password = "threwwu7";
+                //    me.UserName = "info@thewrightpicks.com";
+                //    me.Password = "Threwwu7&";
+            }
         }
 
         public static void ChangeAppMode(bool modeOn, string modeText = "testmode")

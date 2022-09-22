@@ -15,7 +15,7 @@ namespace DailyEngine
             try
             {
                 LibCommon.UpdateNFLMatchups(false);
-                return;
+                //return;
 
                 DateTime start = DateTime.Now; // start timestamp
 
@@ -47,13 +47,7 @@ namespace DailyEngine
         }
         private static void LogRun(string type, string desc)
         {
-            var data = LibCommon.DBModel();
-            HomeAppsLib.db.log log = new HomeAppsLib.db.log();
-            log.type = type;
-            log.description = desc;
-            log.LogDate = DateTime.Now;
-            data.logs.InsertOnSubmit(log);
-            data.SubmitChanges();
+            LibCommon.Log(type, desc);
         }
 
         
